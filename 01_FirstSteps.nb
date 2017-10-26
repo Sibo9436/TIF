@@ -1,0 +1,1974 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     74812,       1966]
+NotebookOptionsPosition[     63985,       1738]
+NotebookOutlinePosition[     64707,       1763]
+CellTagsIndexPosition[     64664,       1760]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["T",
+  FontColor->RGBColor[
+   0.5019607843137255, 0.5019607843137255, 0.5019607843137255]],
+ StyleBox["ecniche ",
+  FontFamily->"Times New Roman",
+  FontWeight->"Plain"],
+ StyleBox["I",
+  FontColor->RGBColor[
+   0.5019607843137255, 0.5019607843137255, 0.5019607843137255]],
+ StyleBox["nformatiche per la ",
+  FontFamily->"Times New Roman",
+  FontWeight->"Plain"],
+ StyleBox["F",
+  FontColor->RGBColor[
+   0.5019607843137255, 0.5019607843137255, 0.5019607843137255]],
+ StyleBox["isica \n",
+  FontFamily->"Times New Roman",
+  FontWeight->"Plain"],
+ StyleBox["A.A. 2012-2013 ",
+  FontFamily->"Times New Roman",
+  FontSize->24]
+}], "Title",
+ CellChangeTimes->{{3.46647808840625*^9, 3.4664780916875*^9}, {
+   3.466483496140625*^9, 3.4664835143125*^9}, {3.49819131790625*^9, 
+   3.498191321125*^9}, {3.52635925796875*^9, 3.52635926078125*^9}, {
+   3.556086288015625*^9, 3.556086296921875*^9}, 3.5563653258125*^9, 
+   3.660735237282949*^9},
+ TextAlignment->Center,
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->GrayLevel[1]],
+
+Cell[TextData[StyleBox["Testi di S. Berardi, M. Grangetto e M. Billo'\nBasato \
+sulle dispense di Laboratorio di Calcolo I del 1998-2007 e di TIF del \
+2008-2011",
+ FontSlant->"Italic"]], "Subtitle",
+ CellChangeTimes->{{3.466483454140625*^9, 3.466483483859375*^9}, {
+   3.466485724*^9, 3.4664857709375*^9}, {3.466516332859375*^9, 
+   3.466516341640625*^9}, {3.4981913236875*^9, 3.498191367609375*^9}, {
+   3.52791700603125*^9, 3.527917022265625*^9}, {3.55608629996875*^9, 
+   3.55608630040625*^9}, 3.559287011296875*^9, 3.55944464028125*^9, 
+   3.5594455334375*^9, 3.559887466625*^9, 3.66073523728342*^9},
+ TextAlignment->Center,
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell["Introduzione e motivazioni. ", "Section",
+ CellChangeTimes->{{3.456748892413*^9, 3.4567488937679996`*^9}, {
+   3.456748993472*^9, 3.456748994225*^9}, {3.498191522984375*^9, 
+   3.49819152746875*^9}, 3.5279965168125*^9, {3.55765079834375*^9, 
+   3.557650801453125*^9}, 3.660735237283719*^9},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ FontSize->18,
+ Background->GrayLevel[1]],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " e' uno strumento per il calcolo simbolico e numerico. Include la \
+possibilita' di scrivere programmi, di visualizzare in molti modi funzioni, \
+superfici, grafi, fare il ",
+ StyleBox["\[OpenCurlyDoubleQuote]fit\[CloseCurlyDoubleQuote] ",
+  FontWeight->"Bold"],
+ "dei dati sperimentali (cioe\[CloseCurlyQuote] trovare la formula che meglio \
+li approssima) , eccetera."
+}], "Text",
+ CellChangeTimes->{{3.497259881714424*^9, 3.497259980970375*^9}, 
+   3.497264963880513*^9, {3.497335765900678*^9, 3.497335773949733*^9}, {
+   3.557636787890625*^9, 3.55763684515625*^9}, {3.557636915453125*^9, 
+   3.557636921375*^9}, {3.55763696125*^9, 3.5576369836875*^9}, {
+   3.557637127625*^9, 3.557637129375*^9}, 3.660735237296938*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Esempio 1 ",
+  FontWeight->"Bold"],
+ "Risoluzione di un sistema lineare"
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.497264606242044*^9, 3.497264613533836*^9}, {
+   3.497339909949143*^9, 3.49733991305797*^9}, 3.660735237297648*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"16", " ", "x"}], " ", "+", " ", 
+       RowBox[{"3", " ", "y"}], " ", "-", " ", 
+       RowBox[{"2", " ", "z"}]}], " ", "\[Equal]", " ", "2"}], ",", 
+     "\[IndentingNewLine]", "                ", 
+     RowBox[{
+      RowBox[{"x", "   ", "-", " ", 
+       RowBox[{"4", " ", "y"}], " ", "+", " ", "z"}], " ", "\[Equal]", " ", 
+      "0"}], ",", "\[IndentingNewLine]", "             ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "7"}], " ", "x"}], "            ", "+", " ", 
+       RowBox[{"9", " ", "z"}]}], " ", "\[Equal]", " ", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.497260202740253*^9, 3.497260303869614*^9}, 
+   3.660735237300702*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ StyleBox["Esempio 2  ",
+  FontWeight->"Bold"],
+ "Disegno di un ellisse e una retta  date in forma parametrica per \
+visualizzare le loro intersezioni"
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.497264618912066*^9, 3.497264626966174*^9}, {
+   3.497335260835731*^9, 3.497335276591682*^9}, {3.497335522511562*^9, 
+   3.497335540910476*^9}, {3.497339929307078*^9, 3.497339934808953*^9}, 
+   3.660735237301098*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"ellisse", " ", "=", 
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", 
+        RowBox[{"Cos", "[", "t", "]"}]}], "+", " ", "1"}], ",", " ", 
+      RowBox[{
+       RowBox[{"Sin", "[", "t", "]"}], "-", 
+       RowBox[{"1", "/", "2"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", 
+      RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+    RowBox[{"AspectRatio", " ", "\[Rule]", " ", "Automatic"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{3.6607352373016233`*^9},
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"ellisse", " ", "=", 
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", 
+        RowBox[{"Cos", "[", "t", "]"}]}], "+", " ", "1"}], ",", " ", 
+      RowBox[{
+       RowBox[{"Sin", "[", "t", "]"}], "-", 
+       RowBox[{"1", "/", "2"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", 
+      RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+    RowBox[{"AspectRatio", " ", "\[Rule]", " ", "Automatic"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"retta", " ", "=", " ", 
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", " ", "+", " ", "t"}], ",", 
+      RowBox[{"t", "/", "2"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+    RowBox[{"AspectRatio", " ", "\[Rule]", " ", "Automatic"}], ",", 
+    RowBox[{"PlotStyle", " ", "\[Rule]", " ", "Red"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"ellisse", ",", "retta"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.497260314820238*^9, 3.49726047887921*^9}, {
+   3.497335284570028*^9, 3.497335358241033*^9}, {3.497335401440688*^9, 
+   3.497335443112321*^9}, {3.497335493757095*^9, 3.497335506405437*^9}, {
+   3.526374144671875*^9, 3.526374162890625*^9}, 3.6607352373023787`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ StyleBox["Esempio ",
+  FontWeight->"Bold"],
+ "3. ",
+ StyleBox["\[OpenCurlyDoubleQuote]Fit\[CloseCurlyDoubleQuote] di un insieme \
+di dati.",
+  FontWeight->"Bold"],
+ " Il \[OpenCurlyDoubleQuote]Fit\[CloseCurlyDoubleQuote] consiste nel cercare \
+la formula che meglio approssima un insieme di dati in un insieme di formule \
+dato. In questo esempio cerchiamo di approssimare un insieme di dati \
+attraverso una equazione di secondo grado."
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.497339796225006*^9, 3.497339808499018*^9}, {
+   3.497339940704633*^9, 3.497339943593234*^9}, {3.52636044565625*^9, 
+   3.52636054190625*^9}, 3.6607352373098307`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2.`"}], ",", "7.6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.75`"}], ",", "6.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.5`"}], ",", "5.12"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.25`"}], ",", "4.2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1."}], ",", "3.18"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.75`"}], ",", "2.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.5`"}], ",", "2.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.25`"}], ",", "1.49"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.`", ",", "1.27"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.25`", ",", "1.02"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.5`", ",", "1.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.75`", ",", "1.12"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.`", ",", "1.24"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.25`", ",", "1.58"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.5`", ",", "1.92"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.75`", ",", "2.58"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.`", ",", "3.22"}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.497339466028152*^9, 3.49733957532435*^9}, {
+   3.497339662606832*^9, 3.49733966441721*^9}, 3.6607352373112583`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData["data"], "Input",
+ CellChangeTimes->{{3.526374439203125*^9, 3.526374439984375*^9}, 
+   3.66073523731153*^9},
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"PlotRange", " ", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "8"}], "}"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.497337451327825*^9, 3.497337455424778*^9}, {
+   3.497337640564921*^9, 3.497337645841576*^9}, {3.497337799137924*^9, 
+   3.497337836353427*^9}, {3.497339674881412*^9, 3.497339700210561*^9}, 
+   3.6607352373123693`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"yfit", " ", "=", " ", 
+  RowBox[{"Fit", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x", ",", 
+      RowBox[{"x", "^", "2"}]}], "}"}], ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.497339589818992*^9, 3.497339603830208*^9}, 
+   3.660735237313231*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fitted", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "yfit"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "2"}], ",", "2", ",", "0.25"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.497337048167296*^9, 3.497337082140852*^9}, 
+   3.497337594602545*^9, {3.497337744754709*^9, 3.497337755137529*^9}, {
+   3.497337980523534*^9, 3.497337996677503*^9}, {3.497339719575966*^9, 
+   3.497339773898077*^9}, 3.660735237314086*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"data", ",", "fitted"}], "}"}], ",", 
+   RowBox[{"PlotStyle", " ", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Blue", ",", " ", "Red"}], "}"}]}], ",", " ", 
+   RowBox[{"Joined", " ", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", "True"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotRange", " ", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "3"}], "}"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.497336349599768*^9, 3.497336352587728*^9}, {
+   3.497336404702685*^9, 3.497336460039354*^9}, {3.497337760192544*^9, 
+   3.497337763388112*^9}, {3.497337865876627*^9, 3.497337866441858*^9}, {
+   3.497338002581175*^9, 3.497338006864856*^9}, {3.497339751255822*^9, 
+   3.497339759253462*^9}, 3.660735237315071*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"e8ee27b3-f276-461b-a51d-f47016915810"],
+
+Cell[TextData[{
+ StyleBox["Esempio 4",
+  FontWeight->"Bold"],
+ " Le prime cento cifre decimali di \[Pi]"
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.497264629772103*^9, 3.497264654101984*^9}, {
+   3.497339991860894*^9, 3.497339994124739*^9}, 3.660735237316337*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Pi", ",", "1000"}], "]"}]], "Input",
+ CellChangeTimes->{{3.497260511414624*^9, 3.497260525876589*^9}, 
+   3.526374854203125*^9, 3.660735237317078*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "Vi sono molti programmi con caratteristiche di questo tipo ",
+ StyleBox["(Maple, Maxima, ...)",
+  FontWeight->"Bold"],
+ ", alcuni piu' rivolti alla manipolazione simbolica, altri piu' a qualla \
+numerica, etc. La logica di base pero' non e' molto diversa. "
+}], "Text",
+ CellChangeTimes->{{3.497260002228452*^9, 3.497260048384368*^9}, {
+   3.497264697237926*^9, 3.497264708356806*^9}, {3.497335661241589*^9, 
+   3.497335673706595*^9}, 3.66073523731741*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "In questo corso si usa ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " ma si potrebbe benissimo usare un altro programma. Cio' che conta e' che \
+impariate la logica di base che permette di sfruttare strumenti di questo \
+tipo."
+}], "Text",
+ CellChangeTimes->{{3.49726006570106*^9, 3.497260120864094*^9}, {
+   3.497264529319531*^9, 3.497264548421122*^9}, {3.497335693005767*^9, 
+   3.497335697667593*^9}, 3.6607352373176928`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Il punto fondamentale, secondo noi, e' il seguente: se imparate a usare un \
+po' ",
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "o programmi analoghi, cio' vi permettera'di ",
+ StyleBox["concentrarvi maggiormente sull'aspetto concettuale",
+  FontWeight->"Bold"],
+ " dei problemi. "
+}], "Text",
+ CellChangeTimes->{{3.497260670148476*^9, 3.497260956375418*^9}, {
+   3.497261002085652*^9, 3.497261029101878*^9}, {3.497261080933522*^9, 
+   3.497261083689712*^9}, 3.497261122182932*^9, 3.497262169698252*^9, {
+   3.497264561440596*^9, 3.497264567473118*^9}, {3.5576374251875*^9, 
+   3.557637425515625*^9}, 3.6607352373193693`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Esempio 5",
+  FontWeight->"Bold"],
+ " Innumerevoli problemi che affronterete nella vostra futura vita da \
+studenti di fisica e poi di fisici  (non solo in Geometria e Algebra \
+lineare!) si esprimono molto efficacemente in termini di ",
+ StyleBox["equazioni tra oggetti detti \[OpenCurlyDoubleQuote]matrici\
+\[CloseCurlyDoubleQuote]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", rettangoli di numeri dotati di operazioni di somma e prodotto, che \
+studierete a fondo nel corso di Geometria Lineare. All'inizio, pero', spesso \
+si tende a non sfruttare questa possibilita' perche' intimiditi dalla \
+lunghezza dei calcoli richiesti per moltiplicare due matrici o invertire una \
+matrice. Se un'equazione tra matrici puo' essere messa nella forma"
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.497260670148476*^9, 3.497260956375418*^9}, {
+   3.497261002085652*^9, 3.497261029101878*^9}, {3.497261080933522*^9, 
+   3.497261083689712*^9}, 3.497261122182932*^9, {3.497262169698252*^9, 
+   3.497262173037515*^9}, {3.497335570414691*^9, 3.497335593943127*^9}, {
+   3.497335715078306*^9, 3.497335718941422*^9}, {3.497340086477985*^9, 
+   3.497340094925742*^9}, {3.526359877234375*^9, 3.52635997340625*^9}, {
+   3.55763745409375*^9, 3.557637458*^9}, {3.5580066156875*^9, 
+   3.55800661821875*^9}, {3.558006742828125*^9, 3.55800674565625*^9}, {
+   3.558007192125*^9, 3.5580072359375*^9}, 3.558007382484375*^9, 
+   3.660735237325001*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"M", " ", "X"}], " ", "=", " ", "A"}],
+  FontWeight->"Bold"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.497260670148476*^9, 3.497260956375418*^9}, {
+   3.497261002085652*^9, 3.497261029101878*^9}, {3.497261080933522*^9, 
+   3.497261083689712*^9}, 3.497261122182932*^9, {3.497262169698252*^9, 
+   3.497262173037515*^9}, {3.497335570414691*^9, 3.497335600375075*^9}, 
+   3.6607352373279667`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "dove M e' una matrice n x n nota, A un vettore di n costanti noto, X un \
+vettore di n incognite, la soluzione generale e' richiede di calcolare la \
+matrice inversa ",
+ Cell[BoxData[
+  SuperscriptBox["M", 
+   RowBox[{"-", "1"}]]],
+  CellChangeTimes->{{3.497261314264357*^9, 3.497261317591884*^9}, {
+   3.497261365229033*^9, 3.497261382485507*^9}},
+  TextJustification->1.,
+  Background->RGBColor[1, 0.9, 0.8]],
+ "di M e il prodotto di ",
+ Cell[BoxData[
+  SuperscriptBox["M", 
+   RowBox[{"-", "1"}]]],
+  CellChangeTimes->{{3.497261314264357*^9, 3.497261317591884*^9}, {
+   3.497261365229033*^9, 3.497261382485507*^9}},
+  TextJustification->1.,
+  Background->RGBColor[1, 0.9, 0.8]],
+ " e di A: "
+}], "Text",
+ CellChangeTimes->{{3.497261132467109*^9, 3.497261188605975*^9}, {
+   3.497261591319675*^9, 3.497261591911568*^9}, {3.497262241613195*^9, 
+   3.49726224255397*^9}, {3.526359677875*^9, 3.526359678421875*^9}, {
+   3.526359976796875*^9, 3.52636004803125*^9}, 3.5263602760625*^9, {
+   3.558006675484375*^9, 3.558006728875*^9}, 3.6607352374848843`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"X", " ", "=", " ", 
+   RowBox[{
+    SuperscriptBox["M", 
+     RowBox[{"-", "1"}]], " ", "A"}]}],
+  FontWeight->"Bold"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.497261314264357*^9, 3.497261317591884*^9}, {
+   3.497261365229033*^9, 3.497261382485507*^9}, 3.66073523748567*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Supponiamo pero' che M sia una matrice 4 x 4, magari dipendente da un \
+parametro h. Per esempio:\
+\>", "Text",
+ CellChangeTimes->{{3.497261406615376*^9, 3.497261431564865*^9}, {
+   3.5576374760625*^9, 3.557637493578125*^9}, {3.558006632125*^9, 
+   3.558006635546875*^9}, 3.660735237486249*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"M", " ", "=", " ", 
+    RowBox[{"(", GridBox[{
+       {"2", "5", "0", "7"},
+       {
+        RowBox[{"-", "h"}], "2", 
+        RowBox[{"-", "1"}], 
+        RowBox[{"9", "h"}]},
+       {"3", "2", 
+        RowBox[{"-", "6"}], "0"},
+       {
+        RowBox[{
+         RowBox[{"-", "3"}], "h"}], "h", "9", "4"}
+      }], ")"}]}],
+   FontWeight->"Bold"], "\[LineSeparator]"}]], "DisplayFormula",
+ CellChangeTimes->{{3.497261453454595*^9, 3.497261464181785*^9}, {
+   3.49726153832966*^9, 3.497261648123811*^9}, {3.497264743615102*^9, 
+   3.497264765231379*^9}, 3.497264812234416*^9, 3.526375858390625*^9, 
+   3.6607352374907017`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "Calcolare l'inversa di M a mano e' decisamente un' impresa scoraggiante! Se \
+abbiamo pero' un programma di calcolo simbolico a disposizione, sara\
+\[CloseCurlyQuote] lui a fare questo passo puramente tecnico per noi. Ad \
+esempio, in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", inseriamo un vettore X di 4 incognite, un vettore A di 4 numeri e la \
+matrice 4 x 4:"
+}], "Text",
+ CellChangeTimes->{{3.497261664261464*^9, 3.497261790079679*^9}, {
+   3.557637500765625*^9, 3.557637528234375*^9}, {3.55800665596875*^9, 
+   3.55800665725*^9}, {3.55800678059375*^9, 3.5580068060625*^9}, 
+   3.6607352374913807`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"X", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3", ",", "x4"}], "}"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"vettore", " ", "delle", " ", "incognite"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"A", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "h", ",", "2", ",", 
+      RowBox[{"3", "h"}]}], "}"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"vettore", " ", "noto"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"M", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"2", ",", "5", " ", ",", "0", ",", " ", "7"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "h"}], ",", "2", " ", ",", " ", 
+        RowBox[{"-", "1"}], ",", " ", 
+        RowBox[{"9", "h"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "2", ",", 
+        RowBox[{"-", "6"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "3"}], " ", "h"}], ",", " ", "h", ",", " ", "9", ",", 
+        " ", "4"}], " ", "}"}]}], "}"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"matrice", " ", "dei", " ", "coefficienti"}], ",", " ", 
+    RowBox[{
+    "4", " ", "righe", " ", "di", " ", "4", " ", "numeri", " ", 
+     "ciascuna"}]}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.497261794115118*^9, 3.497262026369526*^9}, {
+   3.49726477235942*^9, 3.497264815949739*^9}, {3.558006809578125*^9, 
+   3.558006819671875*^9}, 3.660735237492771*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "L\[CloseCurlyQuote]equazione ",
+ StyleBox["MX = A",
+  FontWeight->"Bold"],
+ " ha la forma"
+}], "Text",
+ CellChangeTimes->{{3.497261664261464*^9, 3.497261790079679*^9}, {
+   3.557637500765625*^9, 3.557637528234375*^9}, {3.55800665596875*^9, 
+   3.55800665725*^9}, {3.55800678059375*^9, 3.5580068060625*^9}, {
+   3.558006882203125*^9, 3.55800689096875*^9}, 3.6607352374930067`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     RowBox[{"(", "\[NoBreak]", GridBox[{
+        {"2", "5", "0", "7"},
+        {
+         RowBox[{"-", "h"}], "2", 
+         RowBox[{"-", "1"}], 
+         RowBox[{"9", " ", "h"}]},
+        {"3", "2", 
+         RowBox[{"-", "6"}], "0"},
+        {
+         RowBox[{
+          RowBox[{"-", "3"}], " ", "h"}], "h", "9", "4"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.7]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+     Function[BoxForm`e$, 
+      MatrixForm[BoxForm`e$]]], 
+    RowBox[{"(", "\[NoBreak]", 
+     TagBox[GridBox[{
+        {"x1"},
+        {"x2"},
+        {"x3"},
+        {"x4"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Column], "\[NoBreak]", ")"}]}], "\[Equal]", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", 
+     TagBox[GridBox[{
+        {"1"},
+        {"h"},
+        {"2"},
+        {
+         RowBox[{"3", " ", "h"}]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Column], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}]}]], "Input",
+ CellChangeTimes->{{3.55800689828125*^9, 3.558006900015625*^9}, 
+   3.660735237662171*^9}],
+
+Cell["\<\
+Per trovare il valore di X, prima calcoliamo la matrice inversa:\
+\>", "Text",
+ CellChangeTimes->{{3.497261664261464*^9, 3.497261790079679*^9}, {
+   3.52636023534375*^9, 3.526360246578125*^9}, {3.558006914625*^9, 
+   3.558006925*^9}, 3.660735237662396*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"Inverse", "[", "M", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.497262037670261*^9, 3.497262051063285*^9}, 
+   3.660735237662572*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["Infine moltiplichiamo la matrice inversa per A:", "Text",
+ CellChangeTimes->{{3.497261664261464*^9, 3.497261790079679*^9}, {
+   3.52636023534375*^9, 3.526360284953125*^9}, 3.558007040859375*^9, 
+   3.6607352376627083`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{
+   RowBox[{"Inverse", "[", "M", "]"}], ".", "A"}], "]"}]], "Input",
+ CellChangeTimes->{{3.526376031734375*^9, 3.526376033109375*^9}, 
+   3.660735237662849*^9},
+ FontFamily->"Times New Roman"],
+
+Cell["Ora chiediamo di semplificare algebricamente il risultato:", "Text",
+ CellChangeTimes->{{3.497261664261464*^9, 3.497261790079679*^9}, {
+   3.52636023534375*^9, 3.526360284953125*^9}, {3.558007040859375*^9, 
+   3.55800706559375*^9}, 3.6607352376629763`*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{"Inverse", "[", "M", "]"}], ".", "A"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.497262058925959*^9, 3.497262091099762*^9}, 
+   3.660735237663127*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Qundi, l' unica cosa di cui dobbiamo preoccuparci e' di  come arrivare all' \
+equazione (1) e di saperla risolvere in forma generale come in (2). Tutti \
+questi non sono certo problemi da poco, ma la buona notizia e\
+\[CloseCurlyQuote] che possiamo delegare la parte puramente meccanica della \
+soluzione a un linguaggio di programmazione.\
+\>", "Text",
+ CellChangeTimes->{{3.497264884120044*^9, 3.497264932349565*^9}, {
+   3.497264993625938*^9, 3.497264993797088*^9}, {3.526360298171875*^9, 
+   3.526360384453125*^9}, 3.557637548296875*^9, 3.660735237663432*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "In questo breve corso si analizzeranno una minima parte delle capacita di ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". Spiegheremo i comandi che vi saranno piu' immediatamente utili per il \
+corso di Geometria e Algebra lineare 1 (di cui queste lezioni fanno parte) e \
+per i laboratori di Sperimentazione di fisica che seguirete piu' avanti, dove \
+",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " e' utilizzato per l'analisi dei dati (per esempio, per calcolare un",
+ StyleBox[" \[OpenCurlyDoubleQuote]Fit\[CloseCurlyDoubleQuote]",
+  FontWeight->"Bold"],
+ ")."
+}], "Text",
+ CellChangeTimes->{{3.497340257160319*^9, 3.497340429087173*^9}, {
+   3.526360398265625*^9, 3.526360428390625*^9}, {3.5263605668125*^9, 
+   3.526360574703125*^9}, {3.557637578703125*^9, 3.55763766528125*^9}, 
+   3.66073523766396*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[StyleBox["Riassumendo:\n1) Mathematica ci serve come ausilio \
+per calcolare, visualizzare e capire meglio Geometria e l' analisi dei dati.\n\
+2) Viceversa, fare esercizi  motivati da Geometria e analisi dati e' un mezzo \
+per imparare la logica di Mathematica (e di programmi simili), che vi saranno \
+utili piu\[CloseCurlyQuote] in generale.", "Item1"]], "Text",
+ CellChangeTimes->{{3.497340502556435*^9, 3.49734061580975*^9}, {
+   3.49734607386787*^9, 3.497346079494178*^9}, {3.497346125922793*^9, 
+   3.497346145608023*^9}, {3.5263604213125*^9, 3.52636042403125*^9}, {
+   3.526360580578125*^9, 3.526360591*^9}, {3.5576376855625*^9, 
+   3.5576377368125*^9}, 3.660735237664608*^9},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lezione 1: Generalit\[AGrave], Calcolo numerico.", "Section",
+ CellChangeTimes->{{3.456748892413*^9, 3.4567488937679996`*^9}, {
+  3.456748993472*^9, 3.456748994225*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman",
+ FontSize->18,
+ Background->GrayLevel[1]],
+
+Cell[TextData[{
+ StyleBox["\n",
+  FontSlant->"Italic"],
+ StyleBox["1. Prime operazioni",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[".\n",
+  FontSlant->"Italic"],
+ "Scrivere e calcolare 2+2, 2*2, 2-2, 2/2, 2^2. Dovete scrivere questi \
+calcoli uno alla volta,  oppure separarli con un \"a capo\" (ENTER).  Per \
+valutare le operazione utilizzare SHIFT-ENTER. Le operazioni inserite, e \
+separate da ENTER formano un \"Cell\" (cella), che costituisce \
+l'unit\[AGrave] base di un foglio (o Notebook) ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". La cella \[EGrave] contraddistinta da una parentesi quadra sul lato \
+destro della finestra. La cella pu\[OGrave] essere manipolata una volta \
+selezionata la parentesi corrispondente (selezionare e cancellare con il \
+tasto DELETE oppure operazioni pii\[UGrave] complesse disponibili dal menu \
+Cell nella barra degli strumenti in alto)."
+}], "Text",
+ CellChangeTimes->{{3.4560499631070004`*^9, 3.456050018652*^9}, {
+   3.456050081558*^9, 3.4560501926099997`*^9}, {3.45605030413*^9, 
+   3.456050542123*^9}, {3.52637715571875*^9, 3.526377163421875*^9}, 
+   3.5576379903125*^9, {3.6622108498402767`*^9, 3.662210888970996*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"2", "+", "4"}], ")"}], "/", "5"}]], "Input",
+ CellChangeTimes->{{3.55765432046875*^9, 3.55765433578125*^9}, {
+  3.557654379578125*^9, 3.557654394609375*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"2", "+", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"2", "*", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"2", "-", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"2", "/", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"2", "^", "2"}]}], "Input",
+ CellChangeTimes->{{3.456050279085*^9, 3.456050291168*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "\[LineSeparator]",
+ StyleBox["\n2. Precedenza degli operatori",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[". \n",
+  FontWeight->"Bold"],
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", come tutti i linguaggi di programmazione, applica le operazioni con \
+regole fisse di precedenza. Per esempio \[EGrave] chiaro che in un \
+espressione expression la moltiplicazione/divisione ha sempre precedenza \
+rispetto alla somma. Per forzare l'ordine con cui svolgere le operazioni \
+occorre usare solo e soltanto le parentesi tonde (). Non e' corretto usare { \
+} oppure [ ] che assumono significati completamente diversi come vedremo nel \
+seguito. Se due costanti o simboli non sono separati da alcuna operazione ma \
+solo da spazi viene implicitamente assunta l'operazione di moltiplicazione. \
+Le operazioni non devono necessariamente coinvolgere solo costanti numeriche: \
+si possono anche utilizzare simboli alfanumerici (escludendo i caratteri \
+speciali come parentesi, punti, virgola, +,*,-,/, _ ,ecc). Qualsiasi sequenza \
+alfanumerica (cio\[EGrave] di lettere e numeri), con il vincolo che il primo \
+simbolo della sequenza sia una lettera e non sia un valore numerico), viene \
+identificata come una variabile: dunque a,c,d, ma anche c5a sono variabili. \
+Le variabili compaiono scritte in un colore particolare, di solito in ",
+ StyleBox["blu",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ ".\nEseguire i calcoli 5+2*6, (5+2)*6, 3*2^2, (3*2)^2, a+ 2 * c + d, \
+(a+4)*c, 5c +8, c5a +8"
+}], "Text",
+ CellChangeTimes->{{3.4560499631070004`*^9, 3.456050018652*^9}, {
+   3.456050081558*^9, 3.4560502265220003`*^9}, {3.456050627091*^9, 
+   3.456050932201*^9}, {3.456051012921*^9, 3.456051140627*^9}, {
+   3.4560512327279997`*^9, 3.45605139663*^9}, {3.456051456639*^9, 
+   3.45605150444*^9}, {3.463194835234375*^9, 3.46319495821875*^9}, {
+   3.557639134484375*^9, 3.557639137703125*^9}, {3.6622109000776033`*^9, 
+   3.662210905486525*^9}, {3.6622109472454977`*^9, 3.662210947803404*^9}, 
+   3.717214445708231*^9},
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"dbad6bd4-9b68-4822-82e7-85aa4e3e3186"],
+
+Cell[BoxData[{
+ RowBox[{"5", "+", 
+  RowBox[{"2", "*", "6"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"5", "+", "2"}], ")"}], "*", "6"}], "\[IndentingNewLine]", 
+ RowBox[{"3", "*", 
+  RowBox[{"2", "^", "2"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"3", "*", "2"}], ")"}], "^", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "+", 
+  RowBox[{"2", " ", "*", "c"}], "+", "d"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"a", "+", "4"}], ")"}], " ", "c"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"5", "c"}], "+", "8"}], "\[IndentingNewLine]", 
+ RowBox[{"c5a", "+", "8"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"24", "/", "4"}], "/", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"24", "/", 
+  RowBox[{"(", 
+   RowBox[{"4", "/", "2"}], ")"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.456050942308*^9, 3.456051000499*^9}, {
+   3.4560510947139997`*^9, 3.456051097585*^9}, {3.456051143829*^9, 
+   3.456051151969*^9}, 3.4560513998640003`*^9, {3.55765461709375*^9, 
+   3.5576546223125*^9}, {3.55765617915625*^9, 3.557656182484375*^9}, {
+   3.653728559791452*^9, 3.653728604425786*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6537287853803997`*^9, 3.6537287915055237`*^9}}],
+
+Cell[TextData[{
+ "  ",
+ StyleBox["3. Come dare un comando",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[".",
+  FontWeight->"Bold"],
+ StyleBox[" \n",
+  FontWeight->"Bold"],
+ "Un comando di ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " si scrive come segue: \n                      ",
+ StyleBox["Command[e1, e2, ..., en]",
+  FontSlant->"Italic"],
+ "\nUn comando inizia sempre con la maiuscola e accetta una serie di \
+parametri e1,e2,...,en racchiusi tra parentesi quadre [ ] e separati da \
+virgole.\ne1, e2, ..., en sono espressioni, che possono a sua volta essere \
+costruite con delle costanti, con le operazioni +,*,-,/, ^ (dove x*y = x\
+\[Times]y e x^y = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "y"], TraditionalForm]]],
+ "), oppure con altri comandi. \nIn presenza di uno spazio, ma mancanza di un \
+segno di operazione, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " sottointende un prodotto: 2 2 \[EGrave] 2\[Times]2.\n  "
+}], "Text",
+ CellChangeTimes->{{3.4560499631070004`*^9, 3.456050018652*^9}, {
+  3.456050081558*^9, 3.4560502265220003`*^9}, {3.456050627091*^9, 
+  3.456050932201*^9}, {3.456051509807*^9, 3.456051530434*^9}, {
+  3.558007418421875*^9, 3.558007418921875*^9}, {3.662210967468639*^9, 
+  3.662210980675749*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["3 bis. Gli errori pi\[UGrave] comuni (a partire dai pi\[UGrave] \
+frequenti)",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "\n",
+ StyleBox["command[e1, e2, ..., en]",
+  FontSlant->"Italic"],
+ " \n (con la c minuscola)\n",
+ StyleBox["Command(e1, e2, ..., en) ",
+  FontSlant->"Italic"],
+ "\n (con la parentesi tonda, se n=1 viene interpretato come: ",
+ StyleBox["Command*e1",
+  FontSlant->"Italic"],
+ ")\n",
+ StyleBox["Command[e1 e2 ... en]\n",
+  FontSlant->"Italic"],
+ "(senza virgole, viene intepretato un prodotto: ",
+ StyleBox["Command[e1*e2*...*en]",
+  FontSlant->"Italic"],
+ ")",
+ StyleBox["\nCommand[e1, , e2, ..., en]",
+  FontSlant->"Italic"],
+ "\n(una virgola di troppo, viene capito: ",
+ StyleBox["Command(e1,Null, e2, ..., en) ",
+  FontSlant->"Italic"],
+ "dove Null \[EGrave] la costante = comando vuoto).\n\nProvare i comandi pi\
+\[UGrave] comuni. \nRadice quadrata: ",
+ StyleBox["Sqrt[x]\n",
+  FontSlant->"Italic"],
+ "Valore assoluto",
+ StyleBox[" Abs[x]\n",
+  FontSlant->"Italic"],
+ "Funzioni trigonometriche",
+ StyleBox[" Sin[x], Cos[x], Tan[x], Sec[x]\n",
+  FontSlant->"Italic"],
+ "Per esecizio calcolare la radice quadrata di 4, il valore assoluto di 10.6, \
+il seno di Pi/2 (Pi si usa per indicare il valore di pigreco), seno di 0, la \
+tangente di Pi/4.",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "\n"
+}], "Text",
+ CellChangeTimes->{{3.4560500383780003`*^9, 3.456050053492*^9}, {
+  3.456051546307*^9, 3.456051546752*^9}, {3.456051581417*^9, 
+  3.456051624116*^9}, {3.456051667783*^9, 3.456051724237*^9}, {
+  3.4560518545550003`*^9, 3.456051959071*^9}, {3.55763842765625*^9, 
+  3.557638450859375*^9}, {3.5576555155*^9, 3.557655518171875*^9}, {
+  3.66221101211759*^9, 3.662211012721596*^9}, {3.662211370863727*^9, 
+  3.662211371897846*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"Sqrt", "[", "4", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Abs", "[", 
+  RowBox[{"-", "10.6"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sin", "[", 
+  RowBox[{"Pi", "/", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sin", "[", "0", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Tan", "[", 
+  RowBox[{"Pi", "/", "4"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.456051644104*^9, 3.4560516504630003`*^9}, {
+  3.456051733795*^9, 3.456051801699*^9}, {3.456051839822*^9, 
+  3.456051846361*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["4. Applicazione di funzioni: l\[CloseCurlyQuote]errore pi\[UGrave] \
+comune",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "\nL'applicazione di una funzione f ad un argomento x, in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", si indica come un comando, dunque con f[x]. Provate a scrivere sia \
+Log[2+3], sia Log(2+3). La prima espressione calcola il logaritmo (in base e) \
+di 5, la seconda Log*5.\n La parentesi tonda si limita a raggruppare e far \
+eseguire 2+3. Poi, in mancanza di segni di operazione tra Log e 5, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["sottintende un prodotto",
+  FontVariations->{"Underline"->True}],
+ ". ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " in questo caso scrive le parentesi tonde in rosso, per farci capire che \
+sospetta un errore da parte nostra."
+}], "Text",
+ CellChangeTimes->{{3.456052671698*^9, 3.456052684809*^9}, {
+   3.55763849303125*^9, 3.557638518578125*^9}, 3.6622110288566227`*^9, 
+   3.66221136707933*^9, {3.662211786968584*^9, 3.662211793999117*^9}, {
+   3.662211830836883*^9, 3.662211844775114*^9}, {3.662211887728592*^9, 
+   3.6622119303919992`*^9}, 3.672035713466939*^9},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"Log", "[", 
+  RowBox[{"2", "+", "3"}], "]"}], "\n", 
+ RowBox[{"Log", 
+  RowBox[{"(", 
+   RowBox[{"2", "+", "3"}], ")"}]}]}], "Input",
+ CellChangeTimes->{{3.456052696696*^9, 3.456052697841*^9}, {
+  3.526377987578125*^9, 3.526377991828125*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["\n",
+  FontSlant->"Italic"],
+ StyleBox["5. Calcolo numerico e calcolo simbolico",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["\nMathematica",
+  FontSlant->"Italic"],
+ " \[EGrave] un potete strumento per la valutazione simbolica. Per questo \
+motivo ove possibile le espressioni simboliche non vengono semplificate \
+quando questo comporta una perdita di precisione. Si provi a valutare la \
+radice quadrata di 4 e quindi la radice quadrata di 2. Il seno di Pi/2 e il \
+seno di Pi/3, la divisione 6/3 e 3/4."
+}], "Text",
+ CellChangeTimes->{{3.45605198815*^9, 3.4560521664370003`*^9}, {
+   3.456052707718*^9, 3.456052708146*^9}, {3.5576385463125*^9, 
+   3.55763855003125*^9}, 3.6622117995570498`*^9, {3.6622119365844717`*^9, 
+   3.662211998979199*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"Sqrt", "[", "4", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sqrt", "[", "2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sin", "[", 
+  RowBox[{"Pi", "/", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sin", "[", 
+  RowBox[{"Pi", "/", "3"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"6", "/", "3"}], "\[IndentingNewLine]", 
+ RowBox[{"3", "/", "4"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.456052133564*^9, 3.456052174701*^9}, {3.456052310921*^9,
+   3.456052315301*^9}, {3.653729133822339*^9, 3.653729282763854*^9}, {
+  3.717473052733328*^9, 3.717473083436555*^9}},
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"a777bc4b-26f6-4c5c-bdce-8aa702c2f9c0"],
+
+Cell[TextData[{
+ StyleBox["6. Risultati interattivi \n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " pu\[OGrave] restituire una famiglia di risultati dipendenti da un \
+parametro, insieme a un pulsante che ci consente di scegliere quale risultato \
+vedere. Il comando si chiama Manipulate[.,.], e richiede due argomenti: una \
+espressione con un parametro, per esempio ",
+ Cell[BoxData[
+  SuperscriptBox["2", "n"]],
+  CellChangeTimes->{{3.4631953360625*^9, 3.463195350234375*^9}},
+  TextAlignment->Left,
+  TextJustification->1.],
+ ", e un \"range\" per questo parametro, per esempio {n,1,300,1} (\"n che \
+varia tra 1 e 300, con passo 1\"). "
+}], "Text",
+ CellChangeTimes->{{3.4560522294700003`*^9, 3.456052229574*^9}, {
+  3.4560527119379997`*^9, 3.456052712385*^9}, {3.46319524575*^9, 
+  3.463195422859375*^9}, {3.463196440796875*^9, 3.463196447609375*^9}, {
+  3.6622120145093327`*^9, 3.662212038887741*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Ogni volta che vedete un nuovo comando, come Manipulate, abituatevi a \
+scrivere ",
+ StyleBox["?Manipulate",
+  FontWeight->"Bold"],
+ " per richiedere informazioni sul comando a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.4560522294700003`*^9, 3.456052229574*^9}, {
+  3.4560527119379997`*^9, 3.456052712385*^9}, {3.46319524575*^9, 
+  3.463195422859375*^9}, {3.4631955526875*^9, 3.463195610734375*^9}, {
+  3.55763857078125*^9, 3.557638573390625*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"?", "Manipulate"}]], "Input",
+ CellChangeTimes->{{3.463195613640625*^9, 3.4631956165*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"2", "^", "n"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "300", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4631953360625*^9, 3.463195350234375*^9}, {
+  3.46319643871875*^9, 3.463196439015625*^9}, {3.52637816609375*^9, 
+  3.526378166484375*^9}, {3.526378274859375*^9, 3.5263783078125*^9}, {
+  3.526378425875*^9, 3.52637847665625*^9}, {3.526379373203125*^9, 
+  3.5263793865*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["7. Interrompere un calcolo \n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "E' facile iniziare calcoli troppo lunghi o con risultato troppo lungo, per \
+es., 2 alla milionesima, che per essere scritto richiede oltre 300 mila \
+cifre. Se il risultato tarda a venire, dovete interrompere il calcolo usando \
+l'opzione \"Abort Evaluation\" (",
+ StyleBox["Alt+.",
+  FontWeight->"Bold"],
+ "). Si trova nella colonna \"Evaluation\" del Menu'."
+}], "Text",
+ CellChangeTimes->{{3.456052328929*^9, 3.4560523292469997`*^9}, {
+  3.456052715043*^9, 3.456052715343*^9}, {3.46319503225*^9, 
+  3.4631950466875*^9}, {3.463195095640625*^9, 3.46319512653125*^9}, {
+  3.66221206027911*^9, 3.6622120894591227`*^9}, {3.7172132676396313`*^9, 
+  3.717213282755992*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"2ba57747-b74e-41d6-bcff-1daa0b4644c0"],
+
+Cell[TextData[{
+ StyleBox["8. Precisione\n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "E\[CloseCurlyQuote] possibile calcolare una versione approssimata di \
+2^1000000, e una versione approssimata alle prime 20 cifre, utilizzando ",
+ StyleBox["la funzione N[.,.].",
+  FontFamily->"Times New Roman"]
+}], "Text",
+ CellChangeTimes->{{3.4560523313*^9, 3.4560523318059998`*^9}, {
+  3.456052716881*^9, 3.456052717166*^9}, {3.557638687734375*^9, 
+  3.5576386904375*^9}, {3.662212118745706*^9, 3.662212135367257*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"N", "[", 
+   RowBox[{"2", "^", "1000000"}], "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"versione", " ", "approssimata", " ", "di", " ", 
+    RowBox[{"2", "^", "1000000"}]}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"N", "[", 
+   RowBox[{
+    RowBox[{"2", "^", "1000000"}], ",", "20"}], "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"versione", " ", "di", " ", 
+    RowBox[{"2", "^", "1000000"}], " ", "approssimata", " ", "a", " ", "20", 
+    " ", "cifre"}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.557638698265625*^9, 3.557638757578125*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Attenti a non scrivere invece N (2^1000000), perche\[CloseCurlyQuote] \
+significa: N * 2^1000000.\
+\>", "Text",
+ CellChangeTimes->{{3.5576387745625*^9, 3.55763878615625*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Calcolare una versione approssimata di sqrt[2], e una versione approssimata \
+alle prime 20 cifre, utilizzando ",
+ StyleBox["la funzione N[.,.].",
+  FontFamily->"Times New Roman"]
+}], "Text",
+ CellChangeTimes->{{3.456052334123*^9, 3.456052334457*^9}, {3.456052719394*^9,
+   3.456052719719*^9}, {3.662212158189782*^9, 3.662212158727723*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"N", "[", 
+  RowBox[{"Sqrt", "[", "2", "]"}], "]"}], "\n", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"Sqrt", "[", "2", "]"}], ",", "20"}], "]"}]}], "Input",
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Attenti a non scrivere N[Sqrt[2] 20], senza virgola viene capito un \
+prodotto: N[Sqrt[2]*20].\
+\>", "Text",
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "Calcolare le prime 100 cifre di ",
+ StyleBox["\[Pi]",
+  FontFamily->"Symbol"],
+ StyleBox[" utilizzando la costante Pi e la funzione N[.,.].",
+  FontFamily->"Times New Roman"]
+}], "Text",
+ CellChangeTimes->{{3.4560523371*^9, 3.456052337752*^9}, {3.456052722127*^9, 
+  3.4560527224700003`*^9}, {3.662212164670539*^9, 3.662212202035404*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Pi", ",", "100"}], "]"}]], "Input",
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["9. Costanti numeriche ",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["\n",
+  FontSlant->"Italic"],
+ "Un altro modo di forzare mathematica a utizzare l'approsimazione numeriche \
+e scrivere esplicitamente i valori approssimati (per esempio: 2.0, 2.4) nelle \
+espressioni da valutare. \nProvare a valutare Sqrt[2] e Sqrt[2.0] e notare la \
+differenza di comportamento."
+}], "Text",
+ CellChangeTimes->{{3.4560523371*^9, 3.456052519441*^9}, {
+  3.4560527254119997`*^9, 3.456052725502*^9}, {3.5576388020625*^9, 
+  3.557638804953125*^9}, {3.66221220895219*^9, 3.662212258066036*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"Sqrt", "[", "2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sqrt", "[", "2.0", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"3", "/", "4"}], "\[IndentingNewLine]", 
+ RowBox[{"3", "/", "4.0"}]}], "Input",
+ CellChangeTimes->{{3.456052521035*^9, 3.4560525274639997`*^9}, {
+  3.717473115465993*^9, 3.717473123135955*^9}},
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"d7ae35fb-bdb4-49c4-b4cc-fd3149da8369"],
+
+Cell[TextData[{
+ StyleBox["10. Esempi di alcuni comandi",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "\n",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " ha un enorme libreria di comandi per svolgere operazioni complesse. Ad \
+esempio calcoliamo i fattori  primi del numero:\n\
+111111111111111111111111111111111111\n(composto di 36 cifre \"uno\") usando \
+FactorInteger[.]"
+}], "Text",
+ CellChangeTimes->{{3.456052733565*^9, 3.4560527797019997`*^9}, {
+  3.557638816578125*^9, 3.55763882621875*^9}, {3.662212281955557*^9, 
+  3.662212294672491*^9}, {3.662212339988143*^9, 3.662212347057252*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"?", "FactorInteger"}]], "Input",
+ CellChangeTimes->{{3.55763884078125*^9, 3.557638847453125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"FactorInteger", "[", "111111111111111111111111111111111111", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.4631174913880744`*^9, 3.463117505303274*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+Calcolare un risultato interattivo con cento milioni di numeri primi \
+(l'ultimo supera i due miliardi) usando la funzione Prime[.]. Chiedete \
+informazioni sul comando Prime per cominciare.\
+\>", "Text",
+ CellChangeTimes->{{3.4560528042200003`*^9, 3.456052804516*^9}, {
+  3.4631956934375*^9, 3.4631957201875*^9}, {3.463197140171875*^9, 
+  3.463197157046875*^9}, {3.66221230357932*^9, 3.6622123065649147`*^9}, {
+  3.662212351309867*^9, 3.662212354201544*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"?", "Prime"}]], "Input",
+ CellChangeTimes->{{3.463195892125*^9, 3.46319589328125*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Prime", "[", "i", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1", ",", "100000000", ",", "1"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.463195723546875*^9, 3.46319576728125*^9}, {
+  3.463195873*^9, 3.46319587509375*^9}, {3.463196413796875*^9, 
+  3.463196414125*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"27169778-4d3c-4b39-8f6e-67510f45fc61"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 1334, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 1, 100000000, 1}}, Typeset`size$$ = {
+    83., {1., 17.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i$5336$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$5336$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Prime[$CellContext`i$$], 
+      "Specifications" :> {{$CellContext`i$$, 1, 100000000, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{481., {88., 100.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.717213344164198*^9},ExpressionUUID->"59344acb-2195-4516-a852-\
+baa0691e222f"]
+}, Open  ]],
+
+Cell["\<\
+Calcolare il fattoriale dei primi 1000 interi (1000! e' il numero 1*2*3*4* \
+... *999*1000).\
+\>", "Text",
+ CellChangeTimes->{{3.456052807791*^9, 3.45605280819*^9}, {
+  3.463196494796875*^9, 3.463196507109375*^9}, {3.662212369560582*^9, 
+  3.6622123703390923`*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"n", "!"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "1000", ",", "1"}], "}"}]}], "]"}], 
+  " "}]], "Input",
+ CellChangeTimes->{{3.46319583071875*^9, 3.46319584175*^9}, {
+  3.463196462140625*^9, 3.463196462359375*^9}, {3.6537294637366056`*^9, 
+  3.653729494429491*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["\n",
+  FontSlant->"Italic"],
+ StyleBox["11.Definizioni statiche di variabili\n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["E\[CloseCurlyQuote]",
+  FontSlant->"Italic"],
+ " possibile assegnare dei valori alle variabili con il comando ",
+ StyleBox["variabile=valore",
+  FontWeight->"Bold"],
+ ". La variabile mantiene il valore finch\[EGrave] non lo cancelliamo o non \
+ne assegnamo un altro. Provate a scrivere x, poi x=2 e di nuovo x, poi x=3 e \
+di nuovo x: la prima volt\[AGrave] si otterr\[AGrave] x (se non avete ancora \
+definito un valore per x), la seconda 2, la terza 3. Insomma: ogni volta, \
+ridefinendo x cancelliamo la definizione. Una variabile a cui \[EGrave] stato \
+assegnato un valore compare scritta in ",
+ StyleBox["nero",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{
+  3.456052812196*^9, {3.46319591334375*^9, 3.463196058265625*^9}, {
+   3.5576390155625*^9, 3.557639063046875*^9}, {3.55763917575*^9, 
+   3.557639200015625*^9}, {3.6622123754928617`*^9, 3.662212427806692*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", "3"}], ";"}]], "Input",
+ CellChangeTimes->{{3.5576565514375*^9, 3.557656565515625*^9}}],
+
+Cell[BoxData[{"x", "\n", 
+ RowBox[{
+  RowBox[{"x", "=", "2"}], ";"}], "\n", "x", "\n", 
+ RowBox[{
+  RowBox[{"x", "=", "3"}], ";"}], "\n", "x"}], "Input",
+ CellChangeTimes->{{3.463195964578125*^9, 3.463195965703125*^9}, {
+  3.463196077046875*^9, 3.46319607784375*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "E' facile scrivere una definizione x=3 e dimenticarsi di valutarla: in \
+questo caso la definizione di x non \[EGrave] avvenuta. Un primo indizio \
+\[EGrave] il colore della variabile: \[EGrave] ",
+ StyleBox["blu",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ " per le variabili senza un valore, ",
+ StyleBox["nero",
+  FontWeight->"Bold"],
+ " per quelle che hanno un valore. Abituatevi a controllare che x sia davvero \
+una variabile e sia definita correttamente. Basta scrivere ?x : il risultato \
+\[EGrave] il messaggio \"Global x\" (x \[EGrave] una variabile globale), \
+seguito dalla definizione corrente di x."
+}], "Text",
+ CellChangeTimes->{{3.463196083890625*^9, 3.463196125390625*^9}, {
+  3.557639235359375*^9, 3.55763926646875*^9}, {3.662212438867999*^9, 
+  3.662212457863871*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"?", "x"}]], "Input",
+ CellChangeTimes->{{3.4631960811875*^9, 3.4631960814375*^9}},
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["12. Nascondere gli output\n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "Nel risultato precedente, notiamo che di ogni definizione, tipo x=100, \
+viene stampato il valore usato, 100 in questo caso. A volte in questo modo \
+riempiamo lo schermo di informazioni inutili. Se non volete vedere il valore \
+di una definizione, scrivete un punto e virgola alla fine della definizione, \
+scrivete cio\[EGrave]\n                                    x=100;\nIl punto e \
+virgola impedisce di vedere il risultato di una operazione (che viene, per\
+\[OGrave], ugualmente eseguita)."
+}], "Text",
+ CellChangeTimes->{{3.55763930440625*^9, 3.5576393334375*^9}, {
+  3.662212466932125*^9, 3.6622125073886766`*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "=", "100"}], ";"}], "\n", "x"}], "Input",
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["13. Definizioni statiche",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "\nQuando assegnamo una variabile con x=a, il valore di x diventa uguale al \
+valore corrente di a, e non cambia pi\[UGrave], anche se il valore di a \
+cambia. Provate a scrivere a=2, x=a, x, a=3, x. Scoprirete che il valore di x \
+resta 2 (il valore che aveva a quando abbiamo posto x=a), e non cambia \
+seguendo il valore di a. Questo tipo di definizione di x (che usa il simbolo \
+\"=\") viene, per questa ragione, detto statico."
+}], "Text",
+ CellChangeTimes->{{3.557639351953125*^9, 3.557639413234375*^9}, {
+  3.662212501756316*^9, 3.662212529543457*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"6e2c9bec-7d09-4c73-98f7-ada8d42cfea8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"x", "=", "a"}], ";"}], "\n", "x", "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "3"}], ";"}], "\n", "x"}], "Input",
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["14. Pulizia delle variabili\n",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "E' buona norma, prima di iniziare un nuovo calcolo, ripulire tutte le \
+variabili che si intendono usare dai contenuti precedenti. Questo perch\
+\[EGrave] pu\[OGrave] capitare di studiare la funzione y=(x^2+1) senza \
+ricordarsi di aver definito x=5. In questo caso, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " studier\[AGrave] in realt\[AGrave] la funzione y=(5^2+1)=26: una retta \
+orizzontale anzich\[EGrave] una parabola. \nIl comando per ripulire le \
+variabili \[EGrave] Clear[.]. Utilizzate Clear[.] per ripulire i valori di x \
+e di a. Ricalcolate x e a per controllare che ora siano indefiniti."
+}], "Text",
+ CellChangeTimes->{{3.557639424171875*^9, 3.557639430796875*^9}, {
+  3.662212539950173*^9, 3.662212563747336*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "a"}], "]"}]], "Input",
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{"?", "x"}], "\n", 
+ RowBox[{"?", "a"}]}], "Input",
+ CellChangeTimes->{{3.46319627165625*^9, 3.463196273546875*^9}},
+ TextAlignment->Left,
+ TextJustification->1.,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ " Un esempio di possibile errore: attenti a non scrivere Clear[x, ,a], con \
+una virgola di troppo. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " intende Clear[x, Null, a], dove Null \[EGrave] la costante \"comando vuoto\
+\", non capisce, e segnala errore."
+}], "Text",
+ CellChangeTimes->{{3.557639453625*^9, 3.557639460578125*^9}},
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"a5b0335a-936e-491f-a355-2a00889d732c"],
+
+Cell["\<\
+Per ripulire tutte le variabili usate anzich\[EGrave] scrivere \
+Clear[var1,var2, ...], si pu\[OGrave] dare il comando abbreviato:
+Clear[\"Global`*\"].\
+\>", "Text",
+ CellChangeTimes->{{3.4567479072200003`*^9, 3.456747907671*^9}, {
+  3.4567479900880003`*^9, 3.456747990474*^9}, {3.662212667596656*^9, 
+  3.6622126944739532`*^9}},
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"bb96d14d-8106-4fca-bf16-fccfb92f1dd8"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ TextJustification->1.,
+ FontFamily->
+  "Times New Roman",ExpressionUUID->"cddc4a05-e77d-4033-bdea-54a4a919348c"],
+
+Cell[TextData[{
+ StyleBox["15. Rappresentazione interna degli oggetti.\n",
+  FontFamily->"Times New Roman",
+  FontWeight->"Bold"],
+ StyleBox["Per vedere come Mathematica rappresenta un oggetto al suo interno \
+si puo\[CloseCurlyQuote] usare il comando FullForm.",
+  FontFamily->"Times New Roman"]
+}], "Text",
+ CellChangeTimes->{{3.717473256743196*^9, 3.717473297858369*^9}, {
+  3.717473430553224*^9, 
+  3.717473469853283*^9}},ExpressionUUID->"c15dd57b-425a-447b-948d-\
+551d7ad77e35"],
+
+Cell[BoxData[{
+ RowBox[{"FullForm", "[", 
+  RowBox[{"1", "/", "3"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FullForm", "[", 
+  RowBox[{"a", "+", "b"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.717473329859634*^9, 
+  3.717473386803627*^9}},ExpressionUUID->"cb56e375-2506-47b7-8a1e-\
+1185f4b275f2"],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 0.5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 3},ExpressionUUID->"ac8e3b92-b9f2-4dff-ae07-6f3de64e9e42"],
+
+Cell[CellGroupData[{
+
+Cell["Esercizi", "Subsection",
+ CellChangeTimes->{{3.717472577416409*^9, 
+  3.717472580561211*^9}},ExpressionUUID->"c06b18ac-fdb7-4fbe-ac2c-\
+187ad4e818a6"],
+
+Cell[TextData[{
+ StyleBox["Qual\[CloseCurlyQuote]e\[CloseCurlyQuote] la base dei logaritmi \
+per la funzione Log? Trovare la risposta senza/con l\[CloseCurlyQuote]uso dei \
+manuali.\n\nEsiste una funzione per scrivere il fattoriale senza usare !? In \
+inglese si dice factorial.\n\nEsiste una funzione per \
+l\[CloseCurlyQuote]esponenziale senza usare  E^(x)? In inglese si dice \
+exponential.\n\nCome si calcola la radice ennesima? Partite dalle \
+informazioni su Sqrt nel manuale.\n",
+  FontFamily->"Times New Roman",
+  FontWeight->"Regular"],
+ "\nCreate un nuovo notebook. Scriveteci dentro. Salvatelo e poi riapritelo.\n\
+\nAprite un notebook con un editor di testo."
+}], "Text",
+ CellChangeTimes->{{3.717472593610042*^9, 3.717472883433983*^9}, {
+  3.717472931776134*^9, 3.717472995081142*^9}, {3.717473499306101*^9, 
+  3.71747353524868*^9}},ExpressionUUID->"d0fb6cdc-6574-483a-8cfc-\
+ddbc3b683ed4"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1380, 855},
+WindowMargins->{{-76, Automatic}, {Automatic, 169}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.1999999999999, 841.92}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 2., 2. Inherited],
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 1067, 31, 241, "Title", "ExpressionUUID" -> \
+"36e4c70e-fa12-4d59-9e75-e7961e9768da"],
+Cell[1637, 55, 700, 13, 110, "Subtitle", "ExpressionUUID" -> \
+"574590a0-640f-43b2-8e26-27f4f8246873"],
+Cell[CellGroupData[{
+Cell[2362, 72, 416, 9, 103, "Section", "ExpressionUUID" -> \
+"c26f3844-101f-4e63-b084-5fd486981225"],
+Cell[2781, 83, 845, 17, 136, "Text", "ExpressionUUID" -> \
+"1f152024-6614-47ea-a6a3-d48275afb3a9"],
+Cell[3629, 102, 372, 10, 93, "Text", "ExpressionUUID" -> \
+"b4949aa0-1cd3-4be3-a4a7-df27022d487f"],
+Cell[4004, 114, 965, 26, 167, "Input", "ExpressionUUID" -> \
+"dcfdaff0-ba24-4d04-8b54-51b8b6cd3e67"],
+Cell[4972, 142, 541, 13, 131, "Text", "ExpressionUUID" -> \
+"8c136d50-c5df-4e61-b06a-451c1b191137"],
+Cell[5516, 157, 605, 18, 61, "Input", "ExpressionUUID" -> \
+"984fc00d-6488-42d5-b182-dedf264df3d1"],
+Cell[6124, 177, 1460, 38, 167, "Input", "ExpressionUUID" -> \
+"05cd9afd-8c4f-4f6f-afac-ca93ca572398"],
+Cell[7587, 217, 778, 18, 169, "Text", "ExpressionUUID" -> \
+"c6d990a0-7d5e-4d60-be92-f2a6c6ba8e9b"],
+Cell[8368, 237, 1682, 51, 165, "Input", "ExpressionUUID" -> \
+"f391a711-83b6-455c-9183-a0b48f973a11"],
+Cell[10053, 290, 153, 3, 60, "Input", "ExpressionUUID" -> \
+"6a423899-4a48-47c4-acea-21b17401ffdb"],
+Cell[10209, 295, 647, 17, 93, "Input", "ExpressionUUID" -> \
+"004d6ace-e1f9-4a77-a363-254e63b6a737"],
+Cell[10859, 314, 401, 11, 93, "Input", "ExpressionUUID" -> \
+"c8aaf5c1-4ee5-472a-9ca5-4c05f8ef93c3"],
+Cell[11263, 327, 650, 17, 93, "Input", "ExpressionUUID" -> \
+"bebf9d51-5339-4846-9f67-6cb5abcb7571"],
+Cell[11916, 346, 1090, 27, 130, "Input", "ExpressionUUID" -> \
+"e8ee27b3-f276-461b-a51d-f47016915810"],
+Cell[13009, 375, 378, 10, 93, "Text", "ExpressionUUID" -> \
+"a11394d3-2d55-4bc4-b593-362e95c7f68f"],
+Cell[13390, 387, 287, 7, 92, "Input", "ExpressionUUID" -> \
+"a846c2d2-32ba-467c-b8bb-6d3ba02326f8"],
+Cell[13680, 396, 530, 11, 98, "Text", "ExpressionUUID" -> \
+"cbca59c2-ee87-4cdb-b7d6-e856dd1838ac"],
+Cell[14213, 409, 510, 12, 98, "Text", "ExpressionUUID" -> \
+"278ce5ae-596a-4b99-a500-581b21f5801c"],
+Cell[14726, 423, 706, 16, 98, "Text", "ExpressionUUID" -> \
+"7b05310f-2d0f-48cc-8b2c-9af27a778a73"],
+Cell[15435, 441, 1572, 29, 283, "Text", "ExpressionUUID" -> \
+"04a83f68-c970-4990-9b71-227d87356cb3"],
+Cell[17010, 472, 539, 12, 80, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"ebe85901-284a-4af7-ad69-63efee5b11c2"],
+Cell[17552, 486, 1164, 28, 135, "Text", "ExpressionUUID" -> \
+"beeeff84-b091-4140-8d3d-0945a1534b0e"],
+Cell[18719, 516, 411, 11, 82, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"f25ce520-37d8-4e55-93e8-638b78e16ee3"],
+Cell[19133, 529, 396, 9, 92, "Text", "ExpressionUUID" -> \
+"66432c09-e195-40a1-8a87-150c40e505a8"],
+Cell[19532, 540, 767, 23, 240, "DisplayFormula", "ExpressionUUID" -> \
+"0460b516-a5e3-4af8-a697-faac996c5b68"],
+Cell[20302, 565, 731, 16, 206, "Text", "ExpressionUUID" -> \
+"ebf2bbee-59d3-49d9-8a1f-255b25bf978f"],
+Cell[21036, 583, 1699, 48, 203, "Input", "ExpressionUUID" -> \
+"e72d5855-4198-4773-a5dd-9852edab3e8a"],
+Cell[22738, 633, 489, 12, 92, "Text", "ExpressionUUID" -> \
+"2cd7defe-eef1-43f9-a7e8-3036aa966865"],
+Cell[23230, 647, 2333, 70, 160, "Input", "ExpressionUUID" -> \
+"eebc2390-7e79-4f02-ad67-8c7ec1b6b8c4"],
+Cell[25566, 719, 358, 8, 92, "Text", "ExpressionUUID" -> \
+"810697f4-f781-4958-a7d0-e600fad9a94f"],
+Cell[25927, 729, 281, 7, 92, "Input", "ExpressionUUID" -> \
+"f05c784c-cfcb-4b2c-a3ff-8953301e5ea1"],
+Cell[26211, 738, 320, 6, 92, "Text", "ExpressionUUID" -> \
+"cab9348d-f0dd-4b56-8f4f-7251a968be41"],
+Cell[26534, 746, 245, 6, 60, "Input", "ExpressionUUID" -> \
+"35e905ff-3244-4bb5-9839-641786f47cb4"],
+Cell[26782, 754, 354, 6, 92, "Text", "ExpressionUUID" -> \
+"5f7e05dd-371e-4b7c-96d5-70eae11c6047"],
+Cell[27139, 762, 342, 9, 93, "Input", "ExpressionUUID" -> \
+"5a901dee-da25-49aa-8729-0a1f70bdc865"],
+Cell[27484, 773, 665, 12, 206, "Text", "ExpressionUUID" -> \
+"6d9135c6-f892-4d49-83c6-4da854087f87"],
+Cell[28152, 787, 899, 20, 174, "Text", "ExpressionUUID" -> \
+"2dd7ab47-a78a-46be-b26c-79d05b5acf17"],
+Cell[29054, 809, 753, 11, 212, "Text", "ExpressionUUID" -> \
+"f1ab1ba3-cc9c-41e5-a201-41d356c8b71f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29844, 825, 295, 7, 103, "Section", "ExpressionUUID" -> \
+"09418e5a-88a3-4e12-a71a-4a1a50ce4981"],
+Cell[30142, 834, 1249, 26, 364, "Text", "ExpressionUUID" -> \
+"0f111625-4d93-49de-99a3-e0239e431565"],
+Cell[31394, 862, 209, 5, 63, "Input", "ExpressionUUID" -> \
+"01bbe732-91fd-4ec2-a3bb-0e241a45dbb5"],
+Cell[31606, 869, 367, 8, 205, "Input", "ExpressionUUID" -> \
+"fb6fefb3-2717-4225-a843-39fa403ff22b"],
+Cell[31976, 879, 2172, 40, 592, "Text", "ExpressionUUID" -> \
+"dbad6bd4-9b68-4822-82e7-85aa4e3e3186"],
+Cell[34151, 921, 1216, 30, 421, "Input", "ExpressionUUID" -> \
+"de7116af-8be9-47f7-82b6-013259ef7619"],
+Cell[35370, 953, 96, 1, 63, "Input", "ExpressionUUID" -> \
+"ee9ce690-bc55-41fc-8e6e-b32dbec7abad"],
+Cell[35469, 956, 1332, 35, 402, "Text", "ExpressionUUID" -> \
+"e2d361bd-0102-4d23-8830-fdb09800cf3b"],
+Cell[36804, 993, 1840, 51, 706, "Text", "ExpressionUUID" -> \
+"a64e92c4-470f-4d01-8008-ce2a13f0be43"],
+Cell[38647, 1046, 563, 13, 206, "Input", "ExpressionUUID" -> \
+"8b06f74e-7482-4fb5-8ff5-6923b4739f5a"],
+Cell[39213, 1061, 1281, 30, 288, "Text", "ExpressionUUID" -> \
+"f2aa9a6a-0309-42fc-8ba8-f46252e1c8ec"],
+Cell[40497, 1093, 345, 10, 98, "Input", "ExpressionUUID" -> \
+"5c452dd4-6334-422c-b04d-ff9cc8c46ecf"],
+Cell[40845, 1105, 868, 20, 250, "Text", "ExpressionUUID" -> \
+"f02f5252-f74c-4a88-b5b5-e932e3379c66"],
+Cell[41716, 1127, 714, 14, 279, "Input", "ExpressionUUID" -> \
+"a777bc4b-26f6-4c5c-bdce-8aa702c2f9c0"],
+Cell[42433, 1143, 1041, 24, 217, "Text", "ExpressionUUID" -> \
+"108fb796-3e62-43ba-a735-25562707a768"],
+Cell[43477, 1169, 592, 16, 98, "Text", "ExpressionUUID" -> \
+"d0050ff1-2368-45f9-a0c2-a2b5d193f258"],
+Cell[44072, 1187, 170, 4, 61, "Input", "ExpressionUUID" -> \
+"32c28653-4018-4faf-b31a-bc3ff84d6048"],
+Cell[44245, 1193, 557, 13, 61, "Input", "ExpressionUUID" -> \
+"2fb48e7e-460c-4d0f-a5b5-5b60c4af2e7e"],
+Cell[44805, 1208, 913, 20, 174, "Text", "ExpressionUUID" -> \
+"2ba57747-b74e-41d6-bcff-1daa0b4644c0"],
+Cell[45721, 1230, 593, 14, 136, "Text", "ExpressionUUID" -> \
+"917f5b03-e3ff-4e2c-9997-a959e375a17d"],
+Cell[46317, 1246, 658, 18, 98, "Input", "ExpressionUUID" -> \
+"47fb06cf-682c-4ade-96b9-7cc70f1b8189"],
+Cell[46978, 1266, 241, 6, 60, "Text", "ExpressionUUID" -> \
+"2a3cdccd-a335-4013-a6d8-022db2bae816"],
+Cell[47222, 1274, 436, 10, 98, "Text", "ExpressionUUID" -> \
+"9cd9b2eb-7d8f-4abe-8093-87d352c4fa7c"],
+Cell[47661, 1286, 259, 8, 98, "Input", "ExpressionUUID" -> \
+"b7d0dd9e-5eae-4090-96ec-69f13e5d3e6c"],
+Cell[47923, 1296, 175, 5, 60, "Text", "ExpressionUUID" -> \
+"9ec294cf-0286-449c-a66c-21c8fa191055"],
+Cell[48101, 1303, 473, 13, 62, "Text", "ExpressionUUID" -> \
+"0a640f46-8ba3-44d6-9058-f2a0fc031b07"],
+Cell[48577, 1318, 158, 5, 60, "Input", "ExpressionUUID" -> \
+"f66db865-9339-4572-8aa8-62c5eb29f24e"],
+Cell[48738, 1325, 694, 16, 174, "Text", "ExpressionUUID" -> \
+"a9d8bdea-c8da-4731-b8af-dfc888084a7f"],
+Cell[49435, 1343, 449, 9, 171, "Input", "ExpressionUUID" -> \
+"d7ae35fb-bdb4-49c4-b4cc-fd3149da8369"],
+Cell[49887, 1354, 680, 17, 212, "Text", "ExpressionUUID" -> \
+"97ee3efb-95cd-4e08-848b-cd5a237de7dc"],
+Cell[50570, 1373, 121, 2, 63, "Input", "ExpressionUUID" -> \
+"f8385e13-2ab5-4d30-b18b-394fe7c25741"],
+Cell[50694, 1377, 228, 5, 61, "Input", "ExpressionUUID" -> \
+"8fcc1930-c0c7-4ae7-8ccb-59420aa192a4"],
+Cell[50925, 1384, 547, 11, 98, "Text", "ExpressionUUID" -> \
+"c6c7d49d-9a60-443b-9bb9-74be2fdbf4c8"],
+Cell[51475, 1397, 166, 4, 60, "Input", "ExpressionUUID" -> \
+"5de3a271-6a67-4e97-9f22-60d93d312af4"],
+Cell[CellGroupData[{
+Cell[51666, 1405, 493, 13, 61, "Input", "ExpressionUUID" -> \
+"27169778-4d3c-4b39-8f6e-67510f45fc61"],
+Cell[52162, 1420, 1628, 34, 220, "Output", "ExpressionUUID" -> \
+"59344acb-2195-4516-a852-baa0691e222f"]
+}, Open  ]],
+Cell[53805, 1457, 353, 9, 60, "Text", "ExpressionUUID" -> \
+"09ebe951-7394-45f8-8cba-1bdc44b43cfb"],
+Cell[54161, 1468, 441, 13, 61, "Input", "ExpressionUUID" -> \
+"b6861a4b-8da5-4e5e-bec6-9cc52a9da7f7"],
+Cell[54605, 1483, 1129, 27, 288, "Text", "ExpressionUUID" -> \
+"48f909b8-b73d-44af-92e4-47e0ea93b867"],
+Cell[55737, 1512, 131, 3, 63, "Input", "ExpressionUUID" -> \
+"9d564d19-7933-458c-be95-51a5563d0bbd"],
+Cell[55871, 1517, 345, 9, 205, "Input", "ExpressionUUID" -> \
+"fd4563d8-4f05-4d33-83fa-828f8ca548f1"],
+Cell[56219, 1528, 875, 19, 212, "Text", "ExpressionUUID" -> \
+"5d2d869b-ab32-4bab-adbd-abb7aaa4cc26"],
+Cell[57097, 1549, 162, 4, 60, "Input", "ExpressionUUID" -> \
+"d14c906e-9e16-4e3c-9227-2acf9f68ae01"],
+Cell[57262, 1555, 806, 16, 288, "Text", "ExpressionUUID" -> \
+"fba1b4e5-33dc-4582-ad05-e0f066d6b2bf"],
+Cell[58071, 1573, 160, 5, 97, "Input", "ExpressionUUID" -> \
+"d9c825d9-dc26-4e7c-a685-64b01cd5e615"],
+Cell[58234, 1580, 797, 16, 212, "Text", "ExpressionUUID" -> \
+"6e2c9bec-7d09-4c73-98f7-ada8d42cfea8"],
+Cell[59034, 1598, 271, 9, 205, "Input", "ExpressionUUID" -> \
+"04e1ed29-0ce3-4907-8320-06a1bc3fac3f"],
+Cell[59308, 1609, 927, 19, 288, "Text", "ExpressionUUID" -> \
+"00a713dc-83f2-4e42-a24a-e4643a78d642"],
+Cell[60238, 1630, 159, 5, 60, "Input", "ExpressionUUID" -> \
+"73c0832d-72bc-43b0-847e-93c0656d806c"],
+Cell[60400, 1637, 217, 6, 97, "Input", "ExpressionUUID" -> \
+"ff005844-1e7c-4416-83fd-0736bf6f45d6"],
+Cell[60620, 1645, 472, 11, 136, "Text", "ExpressionUUID" -> \
+"a5b0335a-936e-491f-a355-2a00889d732c"],
+Cell[61095, 1658, 453, 10, 136, "Text", "ExpressionUUID" -> \
+"bb96d14d-8106-4fca-bf16-fccfb92f1dd8"],
+Cell[61551, 1670, 187, 4, 60, "Input", "ExpressionUUID" -> \
+"cddc4a05-e77d-4033-bdea-54a4a919348c"],
+Cell[61741, 1676, 483, 11, 98, "Text", "ExpressionUUID" -> \
+"c15dd57b-425a-447b-948d-551d7ad77e35"],
+Cell[62227, 1689, 297, 7, 105, "Input", "ExpressionUUID" -> \
+"cb56e375-2506-47b7-8a1e-1185f4b275f2"],
+Cell[62527, 1698, 331, 10, 11, "Text", "ExpressionUUID" -> \
+"ac8e3b92-b9f2-4dff-ae07-6f3de64e9e42"],
+Cell[CellGroupData[{
+Cell[62883, 1712, 156, 3, 87, "Subsection", "ExpressionUUID" -> \
+"c06b18ac-fdb7-4fbe-ac2c-187ad4e818a6"],
+Cell[63042, 1717, 903, 16, 440, "Text", "ExpressionUUID" -> \
+"d0fb6cdc-6574-483a-8cfc-ddbc3b683ed4"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
