@@ -1,0 +1,1123 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     41031,       1115]
+NotebookOptionsPosition[     32119,        917]
+NotebookOutlinePosition[     32494,        934]
+CellTagsIndexPosition[     32451,        931]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Liste, Vettori, Matrici",
+ FontColor->RGBColor[1, 0, 0]]], "Title",
+ CellChangeTimes->{
+  3.687503272863866*^9},ExpressionUUID->"82916831-a9b9-4a6c-b293-\
+118bf1f43abf"],
+
+Cell[TextData[StyleBox["Testi di S. Berardi, M. Grangetto e M. Billo\
+\[CloseCurlyQuote]\nBasato sulle dispense di Laboratorio di Calcolo I del \
+1998-2007 e di TIF del 2008-2011",
+ FontSlant->"Italic"]], "Subtitle",
+ CellChangeTimes->{
+  3.687503295596159*^9},ExpressionUUID->"d1e8f841-5462-4687-b4b9-\
+ee7e4b16c9d8"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Liste", "Section",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]],
+ StyleBox[" ", "Section",
+  FontSlant->"Italic"]
+}], "Chapter",
+ CellChangeTimes->{
+  3.687503329688403*^9, {3.687503391087792*^9, 
+   3.687503391487059*^9}},ExpressionUUID->"f1562d32-d424-4a06-9dd9-\
+2912f857a02d"],
+
+Cell["\<\
+Una lista \[EGrave] un gruppo di dati qualsiasi (di solito numeri, ma non \
+sempre) disposti in un certo ordine. Una lista di elementi e_1,...,e_n si \
+scrive disponendo gli elementi tra parentesi graffe e separati da virgole: \
+{e_1,...,e_n}. 
+Costruite la lista di elementi 1, 2, 3.\
+\>", "Text",
+ CellChangeTimes->{
+  3.687503355667266*^9},ExpressionUUID->"37f82083-7da9-444b-89e3-\
+f214e6a2b9d7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Il", " ", "valore", " ", "di", " ", "una", " ", "lista", " ", "\[EGrave]",
+     " ", "la", " ", "lista", " ", "medesima"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{
+  3.687504930655122*^9},ExpressionUUID->"d923236a-d8e3-45b4-9e40-\
+e7b30d12669e"],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 0.5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 3},ExpressionUUID->"7ce8c8de-0855-4822-a290-7bf0466386e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Costruzione di liste", "Section",
+ FontWeight->"Bold",
+ FontSlant->"Italic",
+ FontColor->RGBColor[1, 0.5, 0]]], "Chapter",
+ CellChangeTimes->{
+  3.687503416001417*^9},ExpressionUUID->"0ecde744-b836-455e-ac09-\
+1623a8df86f8"],
+
+Cell[TextData[{
+ "Il comando  Table[e_i,{i,1,n}] costruisce la lista {e_1,...,e_n}. ",
+ StyleBox["Tutte le volte che conosciamo una legge che consente di calcolare \
+l\[CloseCurlyQuote]elemento i-esimo di una lista, e conosciamo il numero \
+degli elementi di una lista, possiamo costruire la lista usando il comando \
+Table: questo comando \[EGrave] cruciale in molti usi di ",
+  FontVariations->{"Underline"->True}],
+ StyleBox["Mathematica",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ ". Al posto di i pu\[OGrave] trovarsi una qualsiasi variabile. Una forma pi\
+\[UGrave] generale del comando \[EGrave]:\n                  \
+Table[e_i,{i,min,max,step}]\nCostruisce la lista {e_min, e_min+step, ..., \
+e_max}. Costruire, utilizzando il Comando Table, una lista l1 di cento \
+\[OpenCurlyDoubleQuote]uno\[CloseCurlyDoubleQuote], una lista l2 dei primi \
+cento interi, una lista l3 lista dei quadrati dei primi cento interi. "
+}], "Text",
+ CellChangeTimes->{
+  3.687503440811944*^9},ExpressionUUID->"4587eb65-c2aa-4109-b3b9-\
+148a8cf15301"],
+
+Cell[BoxData[
+ RowBox[{"?", "Table"}]], "Input",ExpressionUUID->"b8893115-1814-4cc7-9735-9d04120ca423"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l1", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "100"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"l2", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "100"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"l3", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"i", "^", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "100"}], "}"}]}], "]"}]}], ";"}]}], "Input",\
+ExpressionUUID->"9a472798-a694-45eb-9763-773a9faa4a03"],
+
+Cell["Notare l\[CloseCurlyQuote]uso di \[OpenCurlyDoubleQuote];\
+\[CloseCurlyDoubleQuote] per nascondere l\[CloseCurlyQuote]output", "Text",
+ CellChangeTimes->{
+  3.687503502498364*^9},ExpressionUUID->"9c96ab8b-9890-43e7-bad1-\
+ba2304d4f7f0"],
+
+Cell[BoxData[{"l1", "\n", "l2", "\n", "l3"}], "Input",ExpressionUUID->"21ba9a03-1072-4f35-a2bf-39490359ca89"],
+
+Cell["\<\
+Si pu\[OGrave] decidere di incrementare l\[CloseCurlyQuote]indice i, anzich\
+\[EGrave] di un passo alla volta, di un numero qualunque di passi ogni volta. \
+La forma del comando in tal caso \[EGrave]:
+\t\tTable[e_i,{i,min,max,passo}]
+Esso costruisce {e_min, e_min+passo, e_min+2passo, ...}, per ogni valore di \
+min+k*passo \[LessEqual] max.  Costruire, utilizzando il comando dato, la \
+lista dei multipli di 10 tra 0 e 100. Si costruisca una lista l4 valutando la \
+funzione Log[x], x a partire dal valore 0.1 a passi di 0.25 fino a x=2.\
+\>", "Text",
+ CellChangeTimes->{
+  3.687503546399744*^9, {3.717729932016219*^9, 
+   3.717729933925754*^9}},ExpressionUUID->"03fc6cde-25f6-42f2-b7fc-\
+ef47eae1dc8e"],
+
+Cell[BoxData[{
+ RowBox[{"Table", "[", 
+  RowBox[{"i", ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "100", ",", "10"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Log", "[", "i", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0.1", ",", "2", ",", "0.25"}], "}"}]}], 
+  "]"}]}], "Input",ExpressionUUID->"71b9ad86-82e8-4e39-9fa7-0133284efa7f"],
+
+Cell["Le liste possono avere pi\[UGrave] di una dimensione: lista di liste", \
+"Text",
+ CellChangeTimes->{{3.687508572545671*^9, 3.687508581734807*^9}, {
+  3.687508611809573*^9, 3.687508617828148*^9}, {3.7177299945728817`*^9, 
+  3.717730006618626*^9}},ExpressionUUID->"69f8fe75-20cb-4071-bf8b-\
+eab1d9b9a25c"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"i", "/", "2"}], ",", 
+     RowBox[{"i", "^", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "20", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.68750862860491*^9, 3.6875086598434563`*^9}, {
+  3.6875087078807898`*^9, 
+  3.6875087422534647`*^9}},ExpressionUUID->"123c1bee-655f-4cb7-a65a-\
+ba2a5489ebf6"],
+
+Cell["\<\
+E possono avere pi\[UGrave] indici. In questo caso sono automaticamente \
+multidimensionali.
+Nel caso di due indici il primo corrisponde alla riga della matrice, il \
+secondo alla colonna.
+Per ogni valore del primo indice viene prodotta la lista che si ottiene \
+iterando sul secondo.\
+\>", "Text",
+ CellChangeTimes->{{3.6875088529442263`*^9, 3.687508888251746*^9}, {
+  3.687587551011561*^9, 3.687587592895018*^9}, {3.717730050658392*^9, 
+  3.71773009476717*^9}},ExpressionUUID->"f7b89370-36a7-457b-b9bf-\
+674875f87313"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"10", " ", "i"}], " ", "+", "j"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"j", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6875087572136087`*^9, 
+  3.687508796347287*^9}},ExpressionUUID->"ceb4e5c2-130b-4dae-ac66-\
+e75b53ff7057"],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 0.5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 3},ExpressionUUID->"6e0ffc1a-f272-41f0-9de4-14d130b63036"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Comandi sulle liste", "Section",
+ FontWeight->"Bold",
+ FontSlant->"Italic",
+ FontColor->RGBColor[1, 0.5, 0]]], "Chapter",
+ CellChangeTimes->{
+  3.687503591517343*^9},ExpressionUUID->"f124c9fe-cf1b-43a9-b43b-\
+91fa360c1e85"],
+
+Cell["\<\
+Calcolate le lunghezze delle liste l1, l2, l3 (comando Length), e controllate \
+che sia 100 in ogni caso.\
+\>", "Text",
+ CellChangeTimes->{
+  3.687503620339258*^9},ExpressionUUID->"7075df90-7843-49ce-91c5-\
+eecc140b1d5d"],
+
+Cell[BoxData[
+ RowBox[{"?", "Length"}]], "Input",ExpressionUUID->"628ed7bb-3ef5-498c-9287-3f07f27fc0b9"],
+
+Cell[BoxData[{
+ RowBox[{"Length", "[", "l1", "]"}], "\n", 
+ RowBox[{"Length", "[", "l2", "]"}], "\n", 
+ RowBox[{"Length", "[", "l3", "]"}]}], "Input",ExpressionUUID->"4ef2179a-8e50-\
+4bca-a47f-5609f7ba83f8"],
+
+Cell["\<\
+L\[CloseCurlyQuote]operatore list[[ j ]] con j intero compreso fra j=1 e \
+j=Length[list]  permette di prelevare l\[CloseCurlyQuote]elemento in \
+posizione j della lista list.   Calcolate alcuni elementi delle liste l1, l2 \
+e l3, usando l\[CloseCurlyQuote]operazione l[[i]] per calcolare l\
+\[CloseCurlyQuote]elemento numero i della lista l. \
+\>", "Text",
+ CellChangeTimes->{
+  3.687503656505715*^9},ExpressionUUID->"e004586d-4641-488a-9cbf-\
+61424f88e473"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"l1", "[", 
+    RowBox[{"[", "22", "]"}], "]"}], ",", 
+   RowBox[{"l2", "[", 
+    RowBox[{"[", "43", "]"}], "]"}], ",", 
+   RowBox[{"l3", "[", 
+    RowBox[{"[", "78", "]"}], "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.687503676752226*^9, 
+  3.687503691157857*^9}},ExpressionUUID->"f26e7384-98f2-4018-9e89-\
+ce0277e4d540"],
+
+Cell[TextData[{
+ "Costruite una nuova lista aggiungendo l\[CloseCurlyQuote]elemento 0 all\
+\[CloseCurlyQuote]inizio di l2, o l\[CloseCurlyQuote]elemento 101 alla fine, \
+utilizzando Prepend e Append. Trovate questi comandi per costruire nuove \
+liste sia in finestre chiamate ",
+ StyleBox["Palettes",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ". Cercate nella voce \
+\[OpenCurlyDoubleQuote]Palettes\[CloseCurlyDoubleQuote] del Menu qui sopra, \
+oppure la voce \[OpenCurlyDoubleQuote]list\[CloseCurlyDoubleQuote] o \
+\[OpenCurlyDoubleQuote]matrix\[CloseCurlyDoubleQuote] \
+dell\[CloseCurlyQuote]Help (sempre nel Menu qui sopra). \nIl comando Join \
+permette di unire piu\[CloseCurlyQuote] liste.\nSi noti che Prepend, Append \
+costruiscono una nuova lista, non modificano la lista originaria. Ricalcolate \
+la lista l2 per verificare che non cambia. Concatenare le lista l2 e l1 con \
+il comando Join."
+}], "Text",
+ CellChangeTimes->{
+  3.687503727136169*^9},ExpressionUUID->"cc079076-18ce-4d75-9a16-\
+fbeeb0ed7328"],
+
+Cell[BoxData[{
+ RowBox[{"?", "Prepend"}], "\[IndentingNewLine]", 
+ RowBox[{"?", "Append"}]}], "Input",ExpressionUUID->"3e54300d-c899-49f8-b2c0-\
+57d7ec4676bc"],
+
+Cell[BoxData[
+ RowBox[{"Prepend", "[", 
+  RowBox[{"l2", ",", "0"}], "]"}]], "Input",ExpressionUUID->"2d426590-e8e7-\
+44eb-acae-872b0ec0e1fe"],
+
+Cell[BoxData[{
+ RowBox[{"Append", "[", 
+  RowBox[{"l2", ",", "101"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Join", "[", 
+  RowBox[{"l2", ",", "l1"}], "]"}], "\[IndentingNewLine]"}], "Input",Expressio\
+nUUID->"97ba0b37-6431-4ad9-9edb-55cc2e0ffb84"],
+
+Cell[BoxData[{"l2", "\[IndentingNewLine]", 
+ RowBox[{"First", "[", "l2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Last", "[", "l2", "]"}], "\[IndentingNewLine]"}], "Input",Expression\
+UUID->"60a542cf-b0bd-445c-9932-ce801784e3b0"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Ordinare una lista",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.5, 0]],
+ StyleBox[".",
+  FontSlant->"Italic"]
+}], "Section",
+ CellChangeTimes->{
+  3.6875039013067493`*^9},ExpressionUUID->"ddde6282-0113-4cae-ba96-\
+5b84079b15bc"],
+
+Cell["\<\
+Il comando Sort[list], oppure Sort[list, Less] ordina gli elementi della \
+lista dal pi\[UGrave] piccolo al pi\[UGrave] grande. Per \
+l\[CloseCurlyQuote]ordinamento decrescente occorre specificare come secondo \
+parametro Greater. Sort[list, Greater]. Si ordini l2 in modo crescente e \
+decrescente.\
+\>", "Text",
+ CellChangeTimes->{
+  3.687503831837216*^9},ExpressionUUID->"12dacbc6-fd74-4ec0-bea0-\
+ebbe6aeaf1c5"],
+
+Cell[BoxData[
+ RowBox[{"?", "Sort"}]], "Input",ExpressionUUID->"c1cbb6e4-ed60-4320-b282-613f82a4bfdb"],
+
+Cell[BoxData[{
+ RowBox[{"Sort", "[", "l2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", 
+  RowBox[{"l2", ",", "Less"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", 
+  RowBox[{"l2", ",", "Greater"}], "]"}]}], "Input",ExpressionUUID->"8259aa6e-\
+793c-4133-8f52-2c280c249769"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Operazioni su liste",
+ FontWeight->"Bold",
+ FontSlant->"Italic",
+ FontColor->RGBColor[1, 0.5, 0]]], "Section",
+ CellChangeTimes->{
+  3.687503929929562*^9},ExpressionUUID->"42cf617e-ec95-469c-943a-\
+288bbcebebaf"],
+
+Cell[TextData[{
+ "Tutte le operazioni elementari si possono applicare alle liste; le \
+operazioni vengono eseguite elemento per elemento. ",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "Le operazioni possono avvenire tra liste e costanti (scalari). Costruite \
+nuove liste partendo dalla lista {1,2,3}, ed eseguendo su ogni elemento di l2 \
+le operazioni: \n+1, *2, ^2. E\[CloseCurlyQuote] sufficiente indicare l\
+\[CloseCurlyQuote]operazione sull\[CloseCurlyQuote]intera lista: per esempio \
+l2+1 crea una nuova lista aggiungendo 1 ad ogni elemento di l2."
+}], "Text",
+ CellChangeTimes->{{3.687503949419832*^9, 
+  3.687503967775997*^9}},ExpressionUUID->"36a29783-14f8-4293-a625-\
+1de77fd89a33"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "+", "1"}], "\n", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "*", "2"}], "\n", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "^", "2"}]}], "Input",ExpressionU\
+UID->"0289841e-fbc5-4741-890e-79acfecdaf2e"],
+
+Cell["\<\
+Tra liste con lo stesso numero di elementi \[EGrave] possibile definire le \
+operazioni tra gli elementi nella stessa posizione. Costruite nuove liste \
+sommando, moltiplicando, ed elevando a potenza ogni elemento della lista \
+{1,2,3} con il corrispondente elemento della lista {10,20,30}.\
+\>", "Text",
+ CellChangeTimes->{
+  3.687503992581753*^9},ExpressionUUID->"98226c2e-9f8e-4f08-8c94-\
+c6ff320f53e8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "+", 
+  RowBox[{"{", 
+   RowBox[{"10", ",", "20", ",", "30"}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "*", 
+  RowBox[{"{", 
+   RowBox[{"10", ",", "20", ",", "30"}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "^", 
+  RowBox[{"{", 
+   RowBox[{"10", ",", "20", ",", "30"}], "}"}]}]}], "Input",ExpressionUUID->\
+"8957b122-30a2-4440-80c5-c2a2676905ee"],
+
+Cell["\<\
+Le liste unidimensionali possono essere usate per rappresentare vettori. \
+Posso usare  +  e  *  per somma e prodotto scalare fra vettori. c*{a,b} per \
+il prodotto fra scalari e vettori. \
+\>", "Text",
+ CellChangeTimes->{{3.717730697806004*^9, 3.717730723572414*^9}, {
+  3.7177315334334097`*^9, 
+  3.717731604350916*^9}},ExpressionUUID->"d93713e3-aba3-4d3f-bf9d-\
+539816835378"],
+
+Cell["\<\
+Molti comandi di Mathematica applicati su una lista producono la lista dei \
+risultati. In molti casi pu\[OGrave] sostituire
+i do-loop o for-loop di altri linguaggi. \
+\>", "Text",
+ CellChangeTimes->{{3.7177313184199553`*^9, 
+  3.717731412895125*^9}},ExpressionUUID->"8955fb43-af5e-4da3-8757-\
+43c865d99d0a"],
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", 
+  RowBox[{"{", 
+   RowBox[{"4", ",", "9"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.717731419085177*^9, 
+  3.717731444612729*^9}},ExpressionUUID->"38618f91-dc15-4d1f-a6f3-\
+8707731240ed"],
+
+Cell["I comandi con questa propriet\[AGrave] sono \
+\[OpenCurlyDoubleQuote]Listable\[CloseCurlyDoubleQuote].", "Text",
+ CellChangeTimes->{{3.717731465228484*^9, 
+  3.717731512258231*^9}},ExpressionUUID->"a60c8730-dbad-4b44-b0c1-\
+0a998651b6fe"],
+
+Cell[BoxData[
+ RowBox[{"??", "Sqrt"}]], "Input",
+ CellChangeTimes->{{3.7177314944546432`*^9, 
+  3.7177314971154413`*^9}},ExpressionUUID->"06ed444c-2488-492b-8b54-\
+5e44b470e871"],
+
+Cell["\<\
+Per ottenere la somma di tuti i termini in una lista posso usare il comando \
+Total:\
+\>", "Text",
+ CellChangeTimes->{{3.7177316578376923`*^9, 
+  3.717731685611205*^9}},ExpressionUUID->"d7af344b-6c3f-4591-8a09-\
+a46389572362"],
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"{", 
+   RowBox[{"2", ",", "3", ",", "4"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.717731692640987*^9, 
+  3.7177317086983147`*^9}},ExpressionUUID->"dd133316-7463-4877-9272-\
+408c0defde2b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Liste eterogenee",
+ FontWeight->"Bold",
+ FontSlant->"Italic",
+ FontColor->RGBColor[1, 0.5, 0]]], "Section",
+ CellChangeTimes->{
+  3.687504028131783*^9},ExpressionUUID->"9719c4d8-5018-4eb0-8fee-\
+9ac4e88f77da"],
+
+Cell["Una lista pu\[OGrave] contenere oggetti di natura diversa", "Text",
+ CellChangeTimes->{{3.6875041235575333`*^9, 3.687504126643743*^9}, {
+  3.687504169427194*^9, 
+  3.6875041821527367`*^9}},ExpressionUUID->"ec8f2705-39fd-46dc-99a9-\
+69e7516956ec"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"a", ",", "b", ",", "c"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"list1", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"list2", "=", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", 
+    RowBox[{"Sqrt", "[", "v", "]"}], ",", "list1", ",", "44", ",", "500.3", 
+    ",", " ", "\"\<Pluto\>\""}], "}"}]}], "\[IndentingNewLine]"}], "Input",Exp\
+ressionUUID->"7daf5e8b-f8fa-4500-8285-32a4a61072a3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list2", "[", 
+   RowBox[{"[", 
+    RowBox[{"3", ",", "2"}], "]"}], "]"}], "  ", 
+  RowBox[{"(*", "  ", 
+   RowBox[{"indici", " ", "iniziano", " ", "da", " ", "1"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"list2", "[", 
+  RowBox[{"[", "4", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"list2", "[", 
+  RowBox[{"[", "3", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"list2", "[", 
+  RowBox[{"[", 
+   RowBox[{"-", "1"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"list2", "[", 
+  RowBox[{"[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], "]"}], "]"}]}], "Input",ExpressionUUID->\
+"e7cada56-7d6c-4117-8775-a53938f4d321"],
+
+Cell[BoxData[{
+ RowBox[{"Flatten", "[", "list2", 
+  "]"}], "\[IndentingNewLine]", "list2", "\[IndentingNewLine]", 
+ RowBox[{"list3", " ", "=", " ", 
+  RowBox[{"Flatten", "[", "list2", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"list4", " ", "=", " ", 
+  RowBox[{"Partition", "[", 
+   RowBox[{"list3", ",", "2"}], "]"}]}], "\[IndentingNewLine]"}], "Input",Expr\
+essionUUID->"3647d801-6c09-4d68-b315-818a4525fc80"],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 0.5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 3},ExpressionUUID->"6a9b7476-f483-4bf4-ac93-a1b897d56cd7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["ListPlot", "Section",
+ FontWeight->"Bold",
+ FontSlant->"Italic",
+ FontColor->RGBColor[1, 0.5, 0]]], "Chapter",
+ CellChangeTimes->{{3.687504419429098*^9, 
+  3.687504460986532*^9}},ExpressionUUID->"13fe8a68-a1e8-4615-a13c-\
+3c0f5e6d7f58"],
+
+Cell["Abbiamo visto il comando ListPlot nella forma", "Text",
+ CellChangeTimes->{{3.687504915888076*^9, 
+  3.68750498616354*^9}},ExpressionUUID->"c2faef2d-b670-4ea4-84a0-\
+2763579bc5d8"],
+
+Cell[BoxData["l3"], "Input",
+ CellChangeTimes->{{3.687504992267035*^9, 
+  3.687504992721363*^9}},ExpressionUUID->"725eda42-5b80-4f8b-95bb-\
+abe2dab99441"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "l3", "]"}]], "Input",
+ CellChangeTimes->{{3.6875049969774637`*^9, 
+  3.687505008584991*^9}},ExpressionUUID->"8ab1e3e5-5afc-468f-bc1e-\
+a054c27d253d"],
+
+Cell["\<\
+Nell\[CloseCurlyQuote]esempio precedente, l\[CloseCurlyQuote]asse delle \
+ascisse ha valori 1,2,3,... In molti casi sperimentali e\[CloseCurlyQuote] \
+necessario associare all\[CloseCurlyQuote]asse x un significato fisico e non \
+semplicemente un insieme crescente di interi. ListPlot[{ {x_1,y_1}, \
+{x_2,y_2}, ..., {x_n,y_n} }] disegna i punti di ascissa x1, x2, ... e \
+ordinata y1, y2, ... . I dati vengono inseriti in forma di matrice nx2, la \
+prima colonna rappresenta n ascisse, la seconda colonna rappresenta i dati. \
+Utilizzare i comandi Table e ListPlot per disegnare la funzione y=x^3 tra -1 \
+e 1 a passi di 0.1.\
+\>", "Text",
+ CellChangeTimes->{
+  3.6875050444251537`*^9},ExpressionUUID->"9c6cd199-8d38-49d5-a616-\
+63e8c31de5a0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lc", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"i", "^", "3"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"-", "1"}], ",", "1", ",", "0.1"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lcx", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"i", "^", "3"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"-", "1"}], ",", "1", ",", "0.1"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "lc", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "lcx", "]"}]}], "Input",ExpressionUUID->"90f19f9c-\
+18e9-433e-ac4b-66bfbaf336c7"],
+
+Cell["\<\
+Tutti gli oggetti grafici si possono personalizzare con moltissime opzioni: \
+etichette degli assi, titolo, legenda, rapporto d\[CloseCurlyQuote]aspetto \
+tra gli assi, ecc. Il comando Options[ListPlot] permette di ottenere una \
+lista di tutte le possibili opzioni. 
+ Ogni opzione e\[CloseCurlyQuote] accompagnata dal suo valore di default, \
+elencato qui sotto. \
+\>", "Text",
+ CellChangeTimes->{
+  3.687505139131147*^9},ExpressionUUID->"587b98c6-33ef-4d8f-af49-\
+ba7669fae0f4"],
+
+Cell[BoxData[
+ RowBox[{"Options", "[", "ListPlot", "]"}]], "Input",ExpressionUUID->"f243a814-2b51-4b47-bb95-227e4659ef6e"],
+
+Cell[TextData[{
+ StyleBox["La freccia \[OpenCurlyDoubleQuote]->\[CloseCurlyDoubleQuote] \
+indica l\[CloseCurlyQuote]assegnazione temporanea.",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[" \n",
+  FontSlant->"Italic"],
+ "Un esempio: la variabile Axes vale True se disegnamo gli assi, False se non \
+li disegnamo. Se inseriamo Axes \[Rule] False tra gli argomenti di ListPlot, \
+assegnamo temporaneamente (per la sola durata del comando ListPlot) Axes a \
+False, e gli assi scompaiono. Nel comando successivo Axes riprende il suo \
+valore di default, True, e gli assi ricompaiono. \n Cambiare i grafici \
+precedenti di l1,l2,l3 congiungendo i punti consecutivi con tratti di retta, \
+assegnado all\[CloseCurlyQuote]opzione Joined il valore temporaneo True con \
+una assegnazione \[OpenCurlyDoubleQuote]->\[CloseCurlyDoubleQuote]. \n Nota: \
+lo stesso risultato si puo\[CloseCurlyQuote] ottenere anche con il comando \
+ListLinePlot"
+}], "Text",
+ CellChangeTimes->{
+  3.6875051873545*^9, {3.687593053725107*^9, 
+   3.687593054362959*^9}},ExpressionUUID->"a55d7934-dab8-4c2a-a02f-\
+74ea1df35cfe"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"lcx", ",", " ", 
+   RowBox[{"Joined", "->", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6875052156944857`*^9, 
+  3.687505218109002*^9}},ExpressionUUID->"fee9efc2-cb53-4acc-81d0-\
+e3b0232d4d39"],
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", "lcx", "]"}]], "Input",
+ CellChangeTimes->{{3.687505246676112*^9, 
+  3.687505248587069*^9}},ExpressionUUID->"6e82d44f-4a9a-46f9-a3fa-\
+f56397c748eb"],
+
+Cell[TextData[{
+ "L\[CloseCurlyQuote]opzione Joined si puo\[CloseCurlyQuote] combinare con l\
+\[CloseCurlyQuote]opzione ",
+ StyleBox["PlotMarkers",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " per sovrappore alla linea anche i punti (che in un esercizio di \
+laboratorio rappresentano i valori sperimentali). Il \
+\[OpenCurlyDoubleQuote]valore\[CloseCurlyDoubleQuote] della variabile \
+PlotMarkers e\[CloseCurlyQuote] un modo rappresentare i punti. Il modo piu\
+\[CloseCurlyQuote] semplice e\[CloseCurlyQuote] utilizzare le scelte \
+automatiche del software inserendo l\[CloseCurlyQuote]assegnazione ",
+ StyleBox["PlotMarkers->Automatic",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ". Per esercizio si crei una lista contente i valori di Sin[x] con x tra 0 e \
+2\[Pi] a passi di \[Pi]/6 e si produca un grafico usando \
+l\[CloseCurlyQuote]opzione Joined->True e PlotMarkers->Automatic."
+}], "Text",
+ CellChangeTimes->{
+  3.687505271500093*^9},ExpressionUUID->"8c1b5999-e7df-4b37-a1f6-\
+80a092a47027"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lcs", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"Sin", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", 
+       RowBox[{"2", " ", "Pi"}], ",", 
+       RowBox[{"Pi", " ", "/", "6"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"lcs", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}]}], "]"}]}], "Input",Express\
+ionUUID->"d961dca2-e553-411c-b38a-67f20ab91a8d"],
+
+Cell["\<\
+Come \[EGrave] possibile scegliere il colore e il tipo di tratto con cui \
+unire i punti?\
+\>", "Text",
+ CellChangeTimes->{{3.687587838998712*^9, 
+  3.687587890220495*^9}},ExpressionUUID->"bfcf88de-b91a-451c-b088-\
+c82bdfbf8e5d"],
+
+Cell[BoxData[
+ RowBox[{"?", "PlotStyle"}]], "Input",
+ CellChangeTimes->{
+  3.687587827052038*^9, {3.68758791389124*^9, 
+   3.687587932362651*^9}},ExpressionUUID->"d47b35a5-838d-4f17-b568-\
+5b789baf6b81"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"lcs", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", " ", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Orange", ",", "Dashed", ",", "Thick"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.687587961128221*^9, 
+  3.687588008467167*^9}},ExpressionUUID->"1432bb5e-c764-40ea-9ae8-\
+48000b0ef014"],
+
+Cell[BoxData[
+ RowBox[{"?", "Frame"}]], "Input",
+ CellChangeTimes->{{3.687588152562984*^9, 
+  3.687588157329062*^9}},ExpressionUUID->"5c2d44a4-ad3d-4d42-9c66-\
+036b0e73aaa3"],
+
+Cell[BoxData[
+ RowBox[{"?", "GridLines"}]], "Input",
+ CellChangeTimes->{{3.6875882307963057`*^9, 
+  3.687588242266335*^9}},ExpressionUUID->"8bcd6431-4797-41a8-95df-\
+84f231c0b685"],
+
+Cell["\<\
+Ridisegnare il grafico di y=x^3 inserendo le etichette x, y degli assi e il \
+titolo del grafico. Si utilizzino le opzioni AxesLabel e PlotLabel \
+\>", "Text",
+ CellChangeTimes->{
+  3.687505308777272*^9},ExpressionUUID->"5fa534a8-b6c1-43dc-a6a9-\
+eccf99775984"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"lcx", ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}]}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"y", "\[Equal]", 
+     RowBox[{"x", "^", "3"}]}]}]}], "]"}]], "Input",ExpressionUUID->"e2171445-\
+1a38-49f9-86af-bbf543817357"],
+
+Cell[TextData[{
+ "In ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " un testo viene scritto tra virgolette: \[OpenCurlyDoubleQuote]y = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "3"], TraditionalForm]],ExpressionUUID->
+  "322b95df-2be2-46d2-aac2-eb6d738b928f"],
+ "\[CloseCurlyDoubleQuote] e\[CloseCurlyQuote] il testo \
+\[OpenCurlyDoubleQuote]y uguale a x al cubo\[CloseCurlyDoubleQuote] (una \
+frase del nostro linguaggio) non l\[CloseCurlyQuote]assegnazione ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "3"], TraditionalForm]],ExpressionUUID->
+  "99dcfe65-854e-4af6-9d96-6d5afc6d5e81"],
+ "di a y (non dunque un comando di ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "). Un testo puo\[CloseCurlyQuote] venir ritoccato con il comando \
+StyleForm[testo, opz1-> valore1, ...], cambiando per esempio la dimensione e \
+il colore. Un testo puo\[CloseCurlyQuote] venir assegnato a una variabile \
+Title e poi venire riutilizzato. "
+}], "Text",
+ CellChangeTimes->{
+  3.687505386642119*^9},ExpressionUUID->"5a546406-7541-4def-a9f5-\
+5cd5748f9bd0"],
+
+Cell[BoxData["\"\<La funzione y = \
+\!\(TraditionalForm\`\*SuperscriptBox[\(x\), \(3\)]\)\>\""], "Input",Expressio\
+nUUID->"9357a265-da23-4ab9-942c-3ec9763a0f59"],
+
+Cell[BoxData[
+ RowBox[{"Title", " ", "=", " ", 
+  RowBox[{"StyleForm", "[", 
+   RowBox[{
+   "\"\<La funzione y = \!\(TraditionalForm\`\*SuperscriptBox[\(x\), \(3\)]\)\
+\>\"", ",", 
+    RowBox[{"FontSize", "\[Rule]", "24"}], ",", " ", 
+    RowBox[{"FontColor", "\[Rule]", " ", "Blue"}], ",", " ", 
+    RowBox[{"FontWeight", "\[Rule]", " ", "Bold"}]}], "]"}]}]], "Input",Expres\
+sionUUID->"efbdc87f-2cd5-4723-9f2e-243e447bf353"],
+
+Cell[BoxData[
+ RowBox[{"?", "Title"}]], "Input",ExpressionUUID->"3b6d48d4-d986-456a-a572-1dc93117d3c8"],
+
+Cell["Un testo puo\[CloseCurlyQuote] venir inserito entro un grafico:", "Text",
+ CellChangeTimes->{
+  3.687505562450713*^9},ExpressionUUID->"75702aca-5893-4c20-be79-\
+75343269b0d4"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"lcx", ",", " ", 
+   RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", "y"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotLabel", " ", "\[Rule]", " ", 
+    FormBox["Title",
+     TraditionalForm]}]}], "]"}]], "Input",ExpressionUUID->"fd2035c5-8861-\
+4c7c-8a5a-cc5183fe033d"],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 0.5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 3},ExpressionUUID->"b82c942f-81f0-4178-95dc-df449600db63"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Esercizi",
+ FontColor->RGBColor[1., 0.5000076295109483, 0.]]], "Subsubsection",
+ CellChangeTimes->{{3.71721218929641*^9, 
+  3.717212193335984*^9}},ExpressionUUID->"16a9f872-f1e6-45db-8dd1-\
+4a2a9abe747a"],
+
+Cell["\<\
+Costruire una lista di 1000 interi casuale scelti tra 1 e 100, e la \
+sottolista fatta dei soli elementi di valore pari, \
+nell\[CloseCurlyQuote]ordine originario. Usate i comandi: Random, Select, \
+EvenQ (cercateli sull\[CloseCurlyQuote]Help).\
+\>", "Text",
+ CellChangeTimes->{
+  3.717212251160612*^9},ExpressionUUID->"8a22950c-4f2c-4eb7-9d3f-\
+c3733405c998"],
+
+Cell[TextData[StyleBox["Costruire una lista di 1000 interi casuale scelti tra \
+1 e 100, e la sottolista fatta dei soli elementi il cui  valore \[EGrave] un \
+numero primo, nell\[CloseCurlyQuote]ordine originario. Usate Select e \
+PrimeQ.", "Subsubsection",
+ FontFamily->"Arial",
+ FontSize->14,
+ FontWeight->"Regular",
+ FontColor->GrayLevel[0]]], "Text",
+ CellChangeTimes->{
+  3.717212277694549*^9, {3.717730382290906*^9, 3.717730386618915*^9}, 
+   3.717730455693512*^9, {3.7177305577633877`*^9, 
+   3.7177305749068947`*^9}},ExpressionUUID->"c6499b6e-caba-405d-8415-\
+e111437d6bb1"],
+
+Cell[TextData[{
+ StyleBox["Costruire una lista di 1000 interi casuale scelti tra 1 e 100, e \
+la sottolista senza i 333 elementi piu\[CloseCurlyQuote]", "Subsubsection",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontWeight->"Regular",
+  FontColor->GrayLevel[0]],
+ StyleBox[" piccoli e i 334 elementi piu\[CloseCurlyQuote] grandi. La \
+sottolista non deve necessariamente essere nell\[CloseCurlyQuote]ordine \
+originario. Usate i comandi: Drop, Take ",
+  FontWeight->"Regular",
+  FontColor->GrayLevel[0]],
+ StyleBox["(cercateli sull\[CloseCurlyQuote]Help).", "Subsubsection",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontWeight->"Regular",
+  FontColor->GrayLevel[0]]
+}], "Text",
+ CellChangeTimes->{
+  3.71721238337539*^9},ExpressionUUID->"ad0d9466-cea1-400f-bb5c-edb106f51b5b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{44, Automatic}, {Automatic, 9}},
+ShowSelection->True,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 18, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 193, 4, 92, "Title", "ExpressionUUID" -> \
+"82916831-a9b9-4a6c-b293-118bf1f43abf"],
+Cell[776, 28, 318, 6, 108, "Subtitle", "ExpressionUUID" -> \
+"d1e8f841-5462-4687-b4b9-ee7e4b16c9d8"],
+Cell[CellGroupData[{
+Cell[1119, 38, 341, 11, 58, "Chapter", "ExpressionUUID" -> \
+"f1562d32-d424-4a06-9dd9-2912f857a02d"],
+Cell[1463, 51, 410, 9, 68, "Text", "ExpressionUUID" -> \
+"37f82083-7da9-444b-89e3-f214e6a2b9d7"],
+Cell[1876, 62, 379, 10, 32, "Input", "ExpressionUUID" -> \
+"d923236a-d8e3-45b4-9e40-e7b30d12669e"],
+Cell[2258, 74, 331, 10, 6, "Text", "ExpressionUUID" -> \
+"7ce8c8de-0855-4822-a290-7bf0466386e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2626, 89, 248, 6, 58, "Chapter", "ExpressionUUID" -> \
+"0ecde744-b836-455e-ac09-1623a8df86f8"],
+Cell[2877, 97, 1058, 19, 144, "Text", "ExpressionUUID" -> \
+"4587eb65-c2aa-4109-b3b9-148a8cf15301"],
+Cell[3938, 118, 103, 1, 32, "Input", "ExpressionUUID" -> \
+"b8893115-1814-4cc7-9735-9d04120ca423"],
+Cell[4044, 121, 656, 20, 75, "Input", "ExpressionUUID" -> \
+"9a472798-a694-45eb-9763-773a9faa4a03"],
+Cell[4703, 143, 242, 4, 30, "Text", "ExpressionUUID" -> \
+"9c96ab8b-9890-43e7-bad1-ba2304d4f7f0"],
+Cell[4948, 149, 109, 0, 75, "Input", "ExpressionUUID" -> \
+"21ba9a03-1072-4f35-a2bf-39490359ca89"],
+Cell[5060, 151, 715, 13, 125, "Text", "ExpressionUUID" -> \
+"03fc6cde-25f6-42f2-b7fc-ef47eae1dc8e"],
+Cell[5778, 166, 403, 11, 54, "Input", "ExpressionUUID" -> \
+"71b9ad86-82e8-4e39-9fa7-0133284efa7f"],
+Cell[6184, 179, 309, 5, 30, "Text", "ExpressionUUID" -> \
+"69f8fe75-20cb-4071-bf8b-eab1d9b9a25c"],
+Cell[6496, 186, 432, 12, 32, "Input", "ExpressionUUID" -> \
+"123c1bee-655f-4cb7-a65a-ba2a5489ebf6"],
+Cell[6931, 200, 530, 11, 68, "Text", "ExpressionUUID" -> \
+"f7b89370-36a7-457b-b9bf-674875f87313"],
+Cell[7464, 213, 372, 11, 32, "Input", "ExpressionUUID" -> \
+"ceb4e5c2-130b-4dae-ac66-e75b53ff7057"],
+Cell[7839, 226, 331, 10, 6, "Text", "ExpressionUUID" -> \
+"6e0ffc1a-f272-41f0-9de4-14d130b63036"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8207, 241, 247, 6, 58, "Chapter", "ExpressionUUID" -> \
+"f124c9fe-cf1b-43a9-b43b-91fa360c1e85"],
+Cell[8457, 249, 231, 6, 30, "Text", "ExpressionUUID" -> \
+"7075df90-7843-49ce-91c5-eecc140b1d5d"],
+Cell[8691, 257, 104, 1, 32, "Input", "ExpressionUUID" -> \
+"628ed7bb-3ef5-498c-9287-3f07f27fc0b9"],
+Cell[8798, 260, 207, 4, 75, "Input", "ExpressionUUID" -> \
+"4ef2179a-8e50-4bca-a47f-5609f7ba83f8"],
+Cell[9008, 266, 469, 9, 68, "Text", "ExpressionUUID" -> \
+"e004586d-4641-488a-9cbf-61424f88e473"],
+Cell[9480, 277, 376, 11, 32, "Input", "ExpressionUUID" -> \
+"f26e7384-98f2-4018-9e89-ce0277e4d540"],
+Cell[9859, 290, 1020, 20, 125, "Text", "ExpressionUUID" -> \
+"cc079076-18ce-4d75-9a16-fbeeb0ed7328"],
+Cell[10882, 312, 159, 3, 54, "Input", "ExpressionUUID" -> \
+"3e54300d-c899-49f8-b2c0-57d7ec4676bc"],
+Cell[11044, 317, 141, 3, 32, "Input", "ExpressionUUID" -> \
+"2d426590-e8e7-44eb-acae-872b0ec0e1fe"],
+Cell[11188, 322, 250, 5, 75, "Input", "ExpressionUUID" -> \
+"97ba0b37-6431-4ad9-9edb-55cc2e0ffb84"],
+Cell[11441, 329, 229, 3, 96, "Input", "ExpressionUUID" -> \
+"60a542cf-b0bd-445c-9932-ce801784e3b0"],
+Cell[CellGroupData[{
+Cell[11695, 336, 284, 10, 64, "Section", "ExpressionUUID" -> \
+"ddde6282-0113-4cae-ba96-5b84079b15bc"],
+Cell[11982, 348, 425, 9, 68, "Text", "ExpressionUUID" -> \
+"12dacbc6-fd74-4ec0-bea0-ebbe6aeaf1c5"],
+Cell[12410, 359, 102, 1, 32, "Input", "ExpressionUUID" -> \
+"c1cbb6e4-ed60-4320-b282-613f82a4bfdb"],
+Cell[12515, 362, 290, 6, 75, "Input", "ExpressionUUID" -> \
+"8259aa6e-793c-4133-8f52-2c280c249769"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12842, 373, 236, 6, 64, "Section", "ExpressionUUID" -> \
+"42cf617e-ec95-469c-943a-288bbcebebaf"],
+Cell[13081, 381, 691, 13, 106, "Text", "ExpressionUUID" -> \
+"36a29783-14f8-4293-a625-1de77fd89a33"],
+Cell[13775, 396, 345, 10, 75, "Input", "ExpressionUUID" -> \
+"0289841e-fbc5-4741-890e-79acfecdaf2e"],
+Cell[14123, 408, 416, 8, 68, "Text", "ExpressionUUID" -> \
+"98226c2e-9f8e-4f08-8c94-c6ff320f53e8"],
+Cell[14542, 418, 525, 16, 75, "Input", "ExpressionUUID" -> \
+"8957b122-30a2-4440-80c5-c2a2676905ee"],
+Cell[15070, 436, 389, 8, 49, "Text", "ExpressionUUID" -> \
+"d93713e3-aba3-4d3f-bf9d-539816835378"],
+Cell[15462, 446, 318, 7, 49, "Text", "ExpressionUUID" -> \
+"8955fb43-af5e-4da3-8757-43c865d99d0a"],
+Cell[15783, 455, 230, 6, 32, "Input", "ExpressionUUID" -> \
+"38618f91-dc15-4d1f-a6f3-8707731240ed"],
+Cell[16016, 463, 244, 4, 30, "Text", "ExpressionUUID" -> \
+"a60c8730-dbad-4b44-b0c1-0a998651b6fe"],
+Cell[16263, 469, 178, 4, 32, "Input", "ExpressionUUID" -> \
+"06ed444c-2488-492b-8b54-5e44b470e871"],
+Cell[16444, 475, 236, 6, 30, "Text", "ExpressionUUID" -> \
+"d7af344b-6c3f-4591-8a09-a46389572362"],
+Cell[16683, 483, 243, 6, 32, "Input", "ExpressionUUID" -> \
+"dd133316-7463-4877-9272-408c0defde2b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16963, 494, 233, 6, 64, "Section", "ExpressionUUID" -> \
+"9719c4d8-5018-4eb0-8fee-9ac4e88f77da"],
+Cell[17199, 502, 252, 4, 30, "Text", "ExpressionUUID" -> \
+"ec8f2705-39fd-46dc-99a9-69e7516956ec"],
+Cell[17454, 508, 494, 11, 96, "Input", "ExpressionUUID" -> \
+"7daf5e8b-f8fa-4500-8285-32a4a61072a3"],
+Cell[17951, 521, 725, 21, 117, "Input", "ExpressionUUID" -> \
+"e7cada56-7d6c-4117-8775-a53938f4d321"],
+Cell[18679, 544, 411, 8, 117, "Input", "ExpressionUUID" -> \
+"3647d801-6c09-4d68-b315-818a4525fc80"],
+Cell[19093, 554, 331, 10, 6, "Text", "ExpressionUUID" -> \
+"6a9b7476-f483-4bf4-ac93-a1b897d56cd7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19473, 570, 260, 6, 58, "Chapter", "ExpressionUUID" -> \
+"13fe8a68-a1e8-4615-a13c-3c0f5e6d7f58"],
+Cell[19736, 578, 186, 3, 30, "Text", "ExpressionUUID" -> \
+"c2faef2d-b670-4ea4-84a0-2763579bc5d8"],
+Cell[19925, 583, 154, 3, 32, "Input", "ExpressionUUID" -> \
+"725eda42-5b80-4f8b-95bb-abe2dab99441"],
+Cell[20082, 588, 190, 4, 32, "Input", "ExpressionUUID" -> \
+"8ab1e3e5-5afc-468f-bc1e-a054c27d253d"],
+Cell[20275, 594, 753, 13, 106, "Text", "ExpressionUUID" -> \
+"9c6cd199-8d38-49d5-a616-63e8c31de5a0"],
+Cell[21031, 609, 749, 23, 96, "Input", "ExpressionUUID" -> \
+"90f19f9c-18e9-433e-ac4b-66bfbaf336c7"],
+Cell[21783, 634, 490, 10, 87, "Text", "ExpressionUUID" -> \
+"587b98c6-33ef-4d8f-af49-ba7669fae0f4"],
+Cell[22276, 646, 122, 1, 32, "Input", "ExpressionUUID" -> \
+"f243a814-2b51-4b47-bb95-227e4659ef6e"],
+Cell[22401, 649, 1103, 21, 163, "Text", "ExpressionUUID" -> \
+"a55d7934-dab8-4c2a-a02f-74ea1df35cfe"],
+Cell[23507, 672, 252, 6, 32, "Input", "ExpressionUUID" -> \
+"fee9efc2-cb53-4acc-81d0-e3b0232d4d39"],
+Cell[23762, 680, 193, 4, 32, "Input", "ExpressionUUID" -> \
+"6e82d44f-4a9a-46f9-a3fa-f56397c748eb"],
+Cell[23958, 686, 1008, 21, 106, "Text", "ExpressionUUID" -> \
+"8c1b5999-e7df-4b37-a1f6-80a092a47027"],
+Cell[24969, 709, 601, 17, 54, "Input", "ExpressionUUID" -> \
+"d961dca2-e553-411c-b38a-67f20ab91a8d"],
+Cell[25573, 728, 239, 6, 30, "Text", "ExpressionUUID" -> \
+"bfcf88de-b91a-451c-b088-c82bdfbf8e5d"],
+Cell[25815, 736, 203, 5, 32, "Input", "ExpressionUUID" -> \
+"d47b35a5-838d-4f17-b568-5b789baf6b81"],
+Cell[26021, 743, 444, 11, 32, "Input", "ExpressionUUID" -> \
+"1432bb5e-c764-40ea-9ae8-48000b0ef014"],
+Cell[26468, 756, 174, 4, 32, "Input", "ExpressionUUID" -> \
+"5c2d44a4-ad3d-4d42-9c66-036b0e73aaa3"],
+Cell[26645, 762, 180, 4, 32, "Input", "ExpressionUUID" -> \
+"8bcd6431-4797-41a8-95df-84f231c0b685"],
+Cell[26828, 768, 271, 6, 49, "Text", "ExpressionUUID" -> \
+"5fa534a8-b6c1-43dc-a6a9-eccf99775984"],
+Cell[27102, 776, 338, 9, 32, "Input", "ExpressionUUID" -> \
+"e2171445-1a38-49f9-86af-bbf543817357"],
+Cell[27443, 787, 1071, 26, 89, "Text", "ExpressionUUID" -> \
+"5a546406-7541-4def-a9f5-5cd5748f9bd0"],
+Cell[28517, 815, 162, 2, 32, "Input", "ExpressionUUID" -> \
+"9357a265-da23-4ab9-942c-3ec9763a0f59"],
+Cell[28682, 819, 426, 9, 58, "Input", "ExpressionUUID" -> \
+"efbdc87f-2cd5-4723-9f2e-243e447bf353"],
+Cell[29111, 830, 103, 1, 32, "Input", "ExpressionUUID" -> \
+"3b6d48d4-d986-456a-a572-1dc93117d3c8"],
+Cell[29217, 833, 181, 3, 30, "Text", "ExpressionUUID" -> \
+"75702aca-5893-4c20-be79-75343269b0d4"],
+Cell[29401, 838, 355, 9, 32, "Input", "ExpressionUUID" -> \
+"fd2035c5-8861-4c7c-8a5a-cc5183fe033d"],
+Cell[29759, 849, 331, 10, 6, "Text", "ExpressionUUID" -> \
+"b82c942f-81f0-4178-95dc-df449600db63"],
+Cell[CellGroupData[{
+Cell[30115, 863, 228, 4, 35, "Subsubsection", "ExpressionUUID" -> \
+"16a9f872-f1e6-45db-8dd1-4a2a9abe747a"],
+Cell[30346, 869, 370, 8, 49, "Text", "ExpressionUUID" -> \
+"8a22950c-4f2c-4eb7-9d3f-c3733405c998"],
+Cell[30719, 879, 582, 12, 49, "Text", "ExpressionUUID" -> \
+"c6499b6e-caba-405d-8415-e111437d6bb1"],
+Cell[31304, 893, 775, 19, 68, "Text", "ExpressionUUID" -> \
+"ad0d9466-cea1-400f-bb5c-edb106f51b5b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
